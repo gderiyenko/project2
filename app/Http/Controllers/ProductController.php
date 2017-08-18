@@ -16,8 +16,4 @@ class ProductController extends Controller
         return view('list.list', ["allProducts" => $models]);
     }
 
-    public function addProduct()
-    {
-        return view('list.admin');
-    }
 }

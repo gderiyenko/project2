@@ -38,9 +38,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/basket', 'BasketController@list');
+
 Route::get('/list', 'ProductController@list');
 
-Route::get('/addProduct', 'ProductController@addProduct');
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
