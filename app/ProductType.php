@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProductType extends Model
 {
-    public static function getAll(){
+    public static function getAllTypes(){
     	return \DB::select('select id, name from product_types where ?', [1]);
     }
 }

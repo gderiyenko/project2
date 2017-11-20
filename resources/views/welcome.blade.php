@@ -65,6 +65,7 @@
         </style>
     </head>
     <body>
+        <div style=" position:fixed">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -91,6 +92,7 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
+        </div>
         </div>
     </body>
 </html>

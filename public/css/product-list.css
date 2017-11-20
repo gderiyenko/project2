@@ -1,25 +1,116 @@
 
-.product-image {
-  width: 200px;
-  height: auto;
-  display: inline-block;
-  float:left; 
-  margin: 7px ;
+
+/* left fixed panel */
+
+.fixed-panel {
+ position:fixed;
+ top:10%;
+ left:0;
+ width:16%;
+ padding: 2%;
+ background: #F0FFFF;
+}
+li.case{
+	list-style-type: none;
+	text-transform: capitalize;
 }
 
-.product-price {
- position: top;
- border-width: 4px;
- border-style: solid;
- border-color: red;
+/* worked zone */
 
- font: normal small-caps 16px/20px;
- color: red;
- display: inline-block;
- padding: 2px 4px;
- 
-}
-.product-size {
-	
+.product-zone {
+	margin: 5% 0 0 16%;
 }
 
+/* product block */
+
+.product-block{
+  position: relative;
+	text-align: -webkit-center;
+	width: 30%;
+	height: 400px;
+	display: inline-block;
+	margin: 1.5%;
+}
+
+.product-img{
+	height: 361px; /* Высота блока */
+	width: 361px;
+    background-position: center;
+}
+
+.product-name-zone{
+	background: #F0FFFF;
+}
+
+
+/* product block : hover 
+
+.product-img:hover{
+	-webkit-filter: grayscale(100%) blur(5px);
+	filter: blur(3px);
+}*/
+
+.product-block:hover .img-description-layer {
+  visibility: visible;
+  opacity: 1;
+}
+
+.img-description {
+  
+}
+
+.product-block:hover .img__description {
+  transform: translateY(0);
+}
+
+
+/* download */
+/* quick reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  font-family: helvetica, arial, sans-serif;
+}
+
+/* relevant styles 
+.product-block {
+  position: relative;
+  height: 200px;
+  width: 257px;
+}*/
+
+.img-description-layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(36, 62, 206, 0.6);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.product-block:hover .img-description-layer {
+  visibility: visible;
+  opacity: 1;
+}
+
+.img-description {
+  transition: .2s;
+  transform: translateY(1em);
+}
+
+.product-block:hover .img-description {
+  transform: translateY(0);
+}

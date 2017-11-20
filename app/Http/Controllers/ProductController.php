@@ -12,8 +12,9 @@ class ProductController extends Controller
 
     public function list()
     {
-    	$models = Product::getAllWithTypes();
-        return view('list.list', ["allProducts" => $models]);
+    	$ProductRequest = Product::getAllWithTypes();
+    	$ProductTypeRequest = ProductType::getAllTypes();
+        return view('list.list', ["allProducts" => $ProductRequest, "allProductTypes"=>$ProductTypeRequest]);
     }
 
 }
