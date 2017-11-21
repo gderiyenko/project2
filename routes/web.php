@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -40,7 +40,11 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/basket', 'BasketController@list');
 
+Route::get('/', 'ProductController@list');
 Route::get('/list', 'ProductController@list');
+Route::get('/list/{$productType}', 'ProductController@listByType($productType)');
+
+// Route::get('/list/', 'ProductController@list');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
