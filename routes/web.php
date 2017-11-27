@@ -40,11 +40,12 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/basket', 'BasketController@list');
 
+Route::get('/basketadd', 'BasketController@addOne');
+
 Route::get('/', 'ProductController@list');
 Route::get('/list', 'ProductController@list');
-Route::get('/list/{$productType}', 'ProductController@listByType($productType)');
+Route::get('/list/{name?}', 'ProductController@listByType');
 
-// Route::get('/list/', 'ProductController@list');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

@@ -1,6 +1,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-
+<script>
+    function myFunction(x) {
+        return $.get('/basketadd', {'data': x}, function(response){ console.log(response); });
+    };
+</script>
 @extends('layouts.app')
 
 @section('content')
@@ -46,22 +50,25 @@
                     <div>
                         <img class="product-img" src="/storage/{{$product->img_path}}"> 
                         <div class="img-description-layer">
-                            <p class="img-description">
+                            <div class="img-description">
                                 <!--OUTPUT PRICE-->
-                                
+                                <p>
                                     @php 
                                         if ($product->sale == 1)
                                             output_with_accuracy($product->sale_price, 2);
                                         else
                                             output_with_accuracy($product->price, 2);
-                                        
-                                        echo "<br>";
+
+                                        echo " for<br>";
 
                                         output_with_accuracy($product->weight, 1);
                                         if ($product->weight_type == 1)
-                                            echo "l.";
+                                            echo " l.";
                                         else
-                                            echo "kg.";
+                                        if ($product->weight_type == 2)
+                                            echo " kg.";
+                                        else
+                                            echo " gr.   ";
 
                                         echo "<br>";
 
@@ -73,9 +80,20 @@
                                         {
                                             echo "End of sale: " . $product->sale_expiration_date;
                                         }
+                                        
+
                                     @endphp
-                                
-                            </p>
+                                </p>
+                                <div>
+                                </div>
+                        
+                                <a type="button" title="Add to basket" onclick ="myFunction({{$product->id}})">
+                                    <i class="material-icons">shopping_cart</i>
+                                </a>
+                                <a type="button"  title="Quick view">
+                                    <i class="material-icons">info_outline</i>
+                                </a>
+                            </div>
                         </div>
                         <div class="product-name-zone">
                           <p class="product-name">{{ $product->name }} </p>
@@ -87,3 +105,6 @@
         @endphp
    </div>
 @endsection
+
+
+

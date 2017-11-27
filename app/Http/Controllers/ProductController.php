@@ -17,9 +17,9 @@ class ProductController extends Controller
         return view('list.list', ["allProducts" => $ProductRequest, "allProductTypes"=>$ProductTypeRequest]);
     }
 
-    public function  listByType($productType)
+    public function listByType($productTypeName)
     {
-        $ProductRequest = Product::getAllWithTypes();
+        $ProductRequest = Product::getByType($productTypeName);
         $ProductTypeRequest = ProductType::getAllTypes();
         return view('list.list', ["allProducts" => $ProductRequest, "allProductTypes"=>$ProductTypeRequest]);
     }
