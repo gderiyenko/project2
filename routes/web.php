@@ -40,7 +40,9 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/basket', 'BasketController@list');
 
-Route::get('/basketadd', 'BasketController@addOne');
+Route::get('/basket-add-one', 'BasketController@addOne');
+Route::get('/basket-delete-one', 'BasketController@deleteOne');
+Route::get('/basket-delete-all', 'BasketController@deleteAllById');
 
 Route::get('/', 'ProductController@list');
 Route::get('/list', 'ProductController@list');

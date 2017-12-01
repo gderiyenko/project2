@@ -28,13 +28,20 @@ class Product extends Model
 		$communication = Communication::where("shop_admin_id", \Auth::user()->id)->get();
 	    return Shop::where("id", $communication[0]->shop_id)->get();
 	}
+
 	public function typeId(){
 	    return $this->belongsTo(ProductType::class);
 	}
+
 	public function weightType(){
 	    return $this->belongsTo(WeightType::class);
 	}
+	
 	public static function getPriceById($x){
-	    return \DB::select('SELECT p.price FROM products p WHERE p.id = ?', [$x]);
+	    $priceInfo = \DB::select('SELECT p.price, p.sale, p.sale_price FROM products p WHERE p.id = ?', [$x]);
+	    if ($priceInfo[0]->sale == 0)
+	    	return $priceInfo[0]->price;
+	    else 
+	    	return $priceInfo[0]->sale_price;
 	}
 }

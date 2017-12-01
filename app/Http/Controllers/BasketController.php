@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Basket;
 use App\Product;
 use App\User;
+use App\ProductType;
 class BasketController extends Controller
 {
 	public function __construct()
@@ -15,20 +16,28 @@ class BasketController extends Controller
     {
     	$id = \Auth::id();
     	$models = Basket::getAllById($id);
-        var_dump($models);
-        die();
-        return view('basket.list');
+        $ProductTypeRequest = ProductType::getAllTypes();
+        return view('basket.list', ["userProducts" => $models, "allProductTypes"=>$ProductTypeRequest]);
     }
     
     public function addOne(){
         $userId = \Auth::id();
-
         $json = $_GET['data'];
         $productId = json_decode($json, true);
+        return Basket::addToBasketInfo($userId, $productId);
+    }
 
-        $productPriceRaw = Product::getPriceById($productId);
-        $productPrice = $productPriceRaw[0]->price;
+    public function deleteOne(){
+        $userId = \Auth::id();
+        $json = $_GET['data'];
+        $productId = json_decode($json, true);
+        return Basket::deleteOneFromBasketInfo($userId, $productId);
+    }
 
-        return Basket::addToBasket($userId, $productId, $productPrice);
+    public function deleteAllById(){
+        $userId = \Auth::id();
+        $json = $_GET['data'];
+        $productId = json_decode($json, true);
+        return Basket::deleteFromBasketInfo($userId, $productId);
     }
 }
