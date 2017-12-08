@@ -27,10 +27,26 @@
     <!-- left panel -->
     <div class="fixed-panel">
         <ul>
-            <li class="case"><a href=" {{ url('/list') }} ">All</a></li>
+            @php
+                if ($thisType == "All"){
+            @endphp
+                <li class="case card cyan"><a href=" {{ url('/list') }} ">All</a></li>
+            @php
+                }else{
+            @endphp
+                <li class="case"><a href=" {{ url('/list') }} ">All</a></li>
+            @php
+                }
+            @endphp
+
             <li class="case"><a href="{{url('/list/sale')}}">Sale</a></li>
             @php 
-                foreach($allProductTypes as $type){
+                foreach($allProductTypes as $type)
+                if ($type->name == $thisType){
+            @endphp
+                <li class="case card cyan"><a href="\list\{{$type->name}}"> {{$type->name}} </a></li>
+            @php
+                }else{
             @endphp
                 <li class="case"><a href="\list\{{$type->name}}"> {{$type->name}} </a></li>
             @php
@@ -87,12 +103,12 @@
                                 <div>
                                 </div>
                         
-                                <a type="button" title="Add to basket" onclick ="myFunction({{$product->id}})">
-                                    <i class="material-icons">shopping_cart</i>
-                                </a>
-                                <a type="button"  title="Quick view">
+                                <button class="btn cyan" title="Add to basket" onclick ="myFunction({{$product->id}})">
+                                    <i class="material-icons">shopping_basket</i>
+                                </button>
+                                <button class="btn black" title="Quick view">
                                     <i class="material-icons">info_outline</i>
-                                </a>
+                                </button>
                             </div>
                         </div>
                         <div class="product-name-zone">

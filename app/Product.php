@@ -18,6 +18,11 @@ class Product extends Model
     public static function getByType($typeName){
     	return \DB::select('SELECT p.*, pt.name as type_name  FROM products p, product_types pt WHERE p.type_id = pt.id AND pt.name = ?', [$typeName]);
     }
+
+    public static function getByTemplate($templateId){
+    	$temp = \DB::select('SELECT p.*, ti.count, pt.name as type_name FROM products p, template_infos ti, product_types pt WHERE (ti.product_id = p.id) AND (ti.template_id = ?) AND (pt.id = p.type_id);', [$templateId]);
+    	return $temp;
+    }
     
 	public function shopId(){
 

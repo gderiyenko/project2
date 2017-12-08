@@ -14,14 +14,14 @@ class ProductController extends Controller
     {
     	$ProductRequest = Product::getAllWithTypes();
     	$ProductTypeRequest = ProductType::getAllTypes();
-        return view('list.list', ["allProducts" => $ProductRequest, "allProductTypes"=>$ProductTypeRequest]);
+        return view('list.list', ["allProducts" => $ProductRequest, "allProductTypes"=>$ProductTypeRequest, "thisType"=>"All"]);
     }
 
     public function listByType($productTypeName)
     {
         $ProductRequest = Product::getByType($productTypeName);
         $ProductTypeRequest = ProductType::getAllTypes();
-        return view('list.list', ["allProducts" => $ProductRequest, "allProductTypes"=>$ProductTypeRequest]);
+        return view('list.list', ["allProducts" => $ProductRequest, "allProductTypes"=>$ProductTypeRequest, "thisType"=>$productTypeName]);
     }
 
 }

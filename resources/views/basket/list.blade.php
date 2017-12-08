@@ -13,6 +13,25 @@
         $.get('/basket-delete-all', {'data': productId}, function(response){ console.log(response); });
         location.reload();
     };
+    function DeleteBasket() {
+        $.get('/basket-delete', {}, function(response){ console.log(response); });
+        location.reload();
+    };
+    function templateBasket() {
+    	var x = $('.mytext').val();
+	    if (x == "") {
+	        alert("Name must be filled out");
+	        return false;
+	    }
+        $.get('/save-template', {'data': x}, function(response){ console.log(response); });
+        closeForm();
+    };
+    function closeForm() {
+    	$("#form-window").css('display', 'none');
+    };
+    function showForm() {
+    	$("#form-window").css('display', 'block');
+    };
 </script>
 @extends('layouts.app')
 
@@ -32,25 +51,43 @@
     @endphp
   
     
-
+<div class="basic-zone">
     <!-- left panel -->
     <div class="fixed-panel">
         <ul>
-            <li class="case"><a href=" {{ url('/list') }} ">All</a></li>
-            <li class="case"><a href="{{url('/list/sale')}}">Sale</a></li>
+            <li class="case"><a href=" {{ url('/list') }} ">Shop</a></li>
+            <li class="case"><a href="{{url('/basket')}}">Your Basket</a></li>
             @php 
-                foreach($allProductTypes as $type){
+                foreach($allTemplates as $template)
+                if ($template->name == $thisTemplate){
             @endphp
-                <li class="case"><a href="\list\{{$type->name}}"> {{$type->name}} </a></li>
+                <li class="case card cyan"><a href="\basket\{{$template->name}}"> {{$template->name}} </a></li>
             @php
-                }
+                }else{
+            @endphp
+                <li class="case"><a href="\basket\{{$template->name}}"> {{$template->name}} </a></li>
+            @php
+            }
             @endphp
         </ul>
     </div>
-
+    <!-- Template form -->
+    <div id="form-window" class="card">
+    	<button onclick="closeForm()">
+    		<i class="material-icons right">close</i>
+    	</button>
+    	<br>
+    	<form name="myForm"  method="get">
+    	<p>Template name:</p>
+		<input type="text" class="mytext">
+		<input type="submit"  onclick="templateBasket()" value="Submit">
+		</form>
+    </div>
     <!-- product zone -->
     <div class="product-zone">
         @php 
+            echo '<h1> ' . $thisTemplate . '</h1>' ;
+        	$sumCost = 0.00;
             foreach ($userProducts as $product){
         @endphp
     
@@ -63,10 +100,14 @@
                                 <!--OUTPUT PRICE-->
                                 <p>
                                     @php 
-                                        if ($product->sale == 1)
+                                        if ($product->sale == 1){
                                             output_with_accuracy($product->sale_price * $product->count, 2);
-                                        else
+                                            $sumCost += $product->sale_price * $product->count;
+                                        }
+                                        else{
                                             output_with_accuracy($product->price * $product->count, 2);
+                                            $sumCost += $product->price * $product->count;
+                                        }
 
                                         echo " for<br>";
 
@@ -100,24 +141,63 @@
                                 <div>
                                 </div>
                         
-                                <a type="button" title="Add to basket" onclick ="AddOne({{$product->id}})">
-                                    <i class="material-icons">shopping_cart</i>
-                                </a>
-                                <a type="button"  title="Delete one" onclick ="DeleteOne({{$product->id}})">
+                                <button class="btn cyan" title="Add to basket" onclick ="AddOne({{$product->id}})">
+                                    <i class="material-icons">shopping_basket</i>
+                                </button>
+                                <button class="btn"  title="Delete one" onclick ="DeleteOne({{$product->id}})">
                                     <i class="material-icons">delete</i>
-                                </a>
-                                <a type="button"  title="Delete all" onclick ="DeleteAll({{$product->id}})">
+                                </button>
+                                <button class="btn black"  title="Delete all" onclick ="DeleteAll({{$product->id}})">
                                     <i class="material-icons">delete_forever</i>
-                                </a>
+                                </button>
                             </div>
                         </div>
                         <div class="product-name-zone">
                           <p class="product-name">{{ $product->name }} </p>
                         </div>
                     </div>
-                </div>    
+                </div>          
         @php
             }
+
+            if (count($userProducts) == 0){
+            	echo '<div class="info-card">';
+            	echo '<p style="text-align: center; margin: 10% 0 0 0;"> There are nothing in the Basket... </p>';
+            	echo '<a href="/list" ><p style="text-align: center;">Back to shopping</p></a>';
+            	echo '<br></div>';
+        	}
+        	else{
         @endphp
+		    <hr>
+		    <div class="info-card">
+		    	<div class="right">
+		    		<h2>Summary: @php output_with_accuracy($sumCost, 2); @endphp grn. </h2>
+		    	</div>
+		    	<button class="btn cyan right bottom" title="Buy Basket" onclick ="DeleteBasket()">
+	            	<i class="material-icons">shopping_cart</i>
+	            	Buy this Basket
+	            </button>
+		    </div>
+	    @php
+            }
+        @endphp
+        <hr>
+        <div class="info-card">
+	        <div class="right bottom">
+	        	<a onclick="showForm()">
+		            <button class="btn cyan" >
+		            	<i class="material-icons">assignment</i>
+		            	Create the template
+		            </button>
+	        	</a>
+
+	        	<button class="btn black" title="Delete all Basket" onclick ="DeleteBasket()">
+	            	<i class="material-icons">delete</i>
+	            	Delete All
+	            </button>
+	        </div>
+	    </div>
+        <hr>
    </div>
+</div>
 @endsection

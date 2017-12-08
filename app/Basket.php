@@ -39,8 +39,14 @@ class Basket extends Model
 	public static function deleteOneFromBasketInfo($userId, $productId){
 		\DB::select('UPDATE basket_infos bi SET bi.count = bi.count-1 WHERE (bi.user_id = ?) AND (bi.product_id = ?) AND (bi.status = ?);', [$userId, $productId, 1]);
 	}
+
 	public static function deleteFromBasketInfo($userId, $productId){
 		\DB::select('UPDATE basket_infos bi SET bi.status = 2 WHERE (bi.user_id = ?) AND (bi.product_id = ?) AND (bi.status = ?);', [$userId, $productId, 1]);
 	}
+
+	public static function deleteBasket($userId){
+		\DB::select('UPDATE basket_infos bi SET bi.status = 2 WHERE (bi.user_id = ?) AND (bi.status = ?);', [$userId, 1]);
+	}
+	
 
 }
