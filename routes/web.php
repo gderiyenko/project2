@@ -47,10 +47,13 @@ Route::get('/basket-delete-one', 'BasketController@deleteOne');
 Route::get('/basket-delete-all', 'BasketController@deleteAllById');
 Route::get('/basket-delete', 'BasketController@delete');
 Route::get('/basket/{templateName?}', 'BasketController@listByTemplate');
+Route::get('/basket-buy', 'BasketController@buyBasket');
 
+Route::get('/list-find', 'ProductController@listByFind');
 Route::get('/', 'ProductController@list');
 Route::get('/list', 'ProductController@list');
 Route::get('/list/{name?}', 'ProductController@listByType');
+
 
 
 Route::group(['prefix' => 'admin'], function () {

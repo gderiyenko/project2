@@ -6,6 +6,7 @@ use App\Product;
 use App\User;
 use App\Template;
 use App\ProductType;
+use App\BookingQuery;
 class BasketController extends Controller
 {
 	public function __construct()
@@ -18,7 +19,9 @@ class BasketController extends Controller
     	$userId = \Auth::id();
     	$models = Basket::getAllById($userId);
         $TemplatesRequest = Template::getAllTemplates($userId);
-        return view('basket.list', ["userProducts" => $models, "allTemplates"=>$TemplatesRequest, "thisTemplate"=>"Your Basket"]);
+        $QueryRequest = BookingQuery::getAllUserQueries($userId);
+        return view('basket.list', ["userProducts" => $models, "allTemplates"=>$TemplatesRequest, 
+                                    "thisTemplate"=>"Your Basket", "allQueries" => $QueryRequest]);
     }
 
     public function listByTemplate($templateName)
@@ -28,7 +31,9 @@ class BasketController extends Controller
         $templateId = $templateId[0]->id;//////
         $ProductRequest = Product::getByTemplate($templateId);
         $TemplatesRequest = Template::getAllTemplates($userId);
-        return view('basket.list', ["userProducts" => $ProductRequest, "allTemplates"=>$TemplatesRequest, "thisTemplate"=>$templateName]);
+        $QueryRequest = BookingQuery::getAllUserQueries($userId);
+        return view('basket.list', ["userProducts" => $ProductRequest, "allTemplates"=>$TemplatesRequest, 
+                                    "thisTemplate"=>$templateName, "allQueries" => $QueryRequest]);
     }
     
     public function addOne(){
@@ -50,6 +55,13 @@ class BasketController extends Controller
         $templateName = $_GET['data'];
         return Template::createTemplate($userId, $templateName);
     }
+    
+    public function buyBasket(){
+        $userId = \Auth::id();
+        $templateName = $_GET['data'];
+        //basketQuery
+        return BookingQuery::addToQuery($userId, $templateName);
+    }
 
     public function deleteAllById(){
         $userId = \Auth::id();
@@ -60,6 +72,11 @@ class BasketController extends Controller
 
     public function delete(){
         $userId = \Auth::id();
-        return Basket::deleteBasket($userId);
+        $templateName = $_GET['data'];
+        echo $templateName . "\n";
+        if ($templateName == "Your Basket")
+            return Basket::deleteBasket($userId);
+        else
+            return Template::deleteTemplate($userId, $templateName);
     }
 }

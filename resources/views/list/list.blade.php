@@ -4,6 +4,10 @@
     function myFunction(productId) {
         return $.get('/basket-add-one', {'data': productId}, function(response){ console.log(response); });
     };
+    function findQuery() {
+        var x = $('.findText').val();
+        return $.get('/list-find', {'data': x}, function(response){ console.log(response); });
+    };
 </script>
 @extends('layouts.app')
 
@@ -40,6 +44,8 @@
             @endphp
 
             <li class="case"><a href="{{url('/list/sale')}}">Sale</a></li>
+            <hr>
+            Types
             @php 
                 foreach($allProductTypes as $type)
                 if ($type->name == $thisType){
@@ -55,12 +61,20 @@
         </ul>
     </div>
 
-    <!-- product zone -->
+    <!-- Product Zone -->
     <div class="product-zone">
+
+    <!-- Find Form -->
+    <form method="get" action="/list-find">
+        <input type="text" name="findQuery" style="width:60%; margin: 0 2%;" placeholder="Введите здесь слово, которое нужно найти..." required>
+        <input type="submit" />
+    </form>
+
+    <!-- Products list -->
+    
         @php 
             foreach ($allProducts as $product){
         @endphp
-    
             
                 <div class="product-block">
                     <div>

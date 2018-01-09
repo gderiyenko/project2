@@ -13,8 +13,8 @@
         $.get('/basket-delete-all', {'data': productId}, function(response){ console.log(response); });
         location.reload();
     };
-    function DeleteBasket() {
-        $.get('/basket-delete', {}, function(response){ console.log(response); });
+    function DeleteBasket(TemplateName) {
+        $.get('/basket-delete', {'data': TemplateName}, function(response){ console.log(response); });
         location.reload();
     };
     function templateBasket() {
@@ -31,6 +31,10 @@
     };
     function showForm() {
     	$("#form-window").css('display', 'block');
+    };
+    function BuyBasket(TemplateName) {
+        $.get('/basket-buy', {'data': TemplateName}, function(response){ console.log(response); });
+        location.reload();
     };
 </script>
 @extends('layouts.app')
@@ -56,8 +60,20 @@
     <div class="fixed-panel">
         <ul>
             <li class="case"><a href=" {{ url('/list') }} ">Shop</a></li>
-            <li class="case"><a href="{{url('/basket')}}">Your Basket</a></li>
-            @php 
+            @php
+                if ($thisTemplate == "Your Basket"){
+            @endphp
+                <li class="case card cyan"><a href="{{url('/basket')}}">Your Basket</a></li>
+            @php
+                }else{
+            @endphp
+                <li class="case"><a href="{{url('/basket')}}">Your Basket</a></li>
+            @php
+                }
+            @endphp
+            <hr>
+            Templates
+            @php
                 foreach($allTemplates as $template)
                 if ($template->name == $thisTemplate){
             @endphp
@@ -66,6 +82,18 @@
                 }else{
             @endphp
                 <li class="case"><a href="\basket\{{$template->name}}"> {{$template->name}} </a></li>
+            @php
+            }
+            @endphp
+            <hr>
+            Orders 
+            @php 
+                foreach($allQueries as $query){
+            @endphp
+                <div>
+                    <li class="case">Time: {{$query->created_at}}</li>
+                    <li class="case">Order code: {{$query->booking_code}} </li>
+                </div>
             @php
             }
             @endphp
@@ -144,7 +172,7 @@
                                 <button class="btn cyan" title="Add to basket" onclick ="AddOne({{$product->id}})">
                                     <i class="material-icons">shopping_basket</i>
                                 </button>
-                                <button class="btn"  title="Delete one" onclick ="DeleteOne({{$product->id}})">
+                                <button class="btn red"  title="Delete one" onclick ="DeleteOne({{$product->id}})">
                                     <i class="material-icons">delete</i>
                                 </button>
                                 <button class="btn black"  title="Delete all" onclick ="DeleteAll({{$product->id}})">
@@ -173,7 +201,7 @@
 		    	<div class="right">
 		    		<h2>Summary: @php output_with_accuracy($sumCost, 2); @endphp grn. </h2>
 		    	</div>
-		    	<button class="btn cyan right bottom" title="Buy Basket" onclick ="DeleteBasket()">
+		    	<button class="btn cyan right bottom" title="Buy Basket" onclick ="BuyBasket('{{$thisTemplate}}')">
 	            	<i class="material-icons">shopping_cart</i>
 	            	Buy this Basket
 	            </button>
@@ -191,7 +219,7 @@
 		            </button>
 	        	</a>
 
-	        	<button class="btn black" title="Delete all Basket" onclick ="DeleteBasket()">
+	        	<button class="btn black" title="Delete this Basket" onclick ="DeleteBasket('{{$thisTemplate}}')">
 	            	<i class="material-icons">delete</i>
 	            	Delete All
 	            </button>

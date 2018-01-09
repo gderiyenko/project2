@@ -64,6 +64,8 @@ hr{
 .cyan:hover {background-color: #00CED1;}
 .black {background-color: #000000;} /* Black */
 .black:hover {background-color: #202020;}
+.red {background-color: #FF4500;} /* Black */
+.red:hover {background-color: #FF7F50;}
 
 #form-window {
   position: fixed;

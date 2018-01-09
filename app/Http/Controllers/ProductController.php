@@ -24,4 +24,12 @@ class ProductController extends Controller
         return view('list.list', ["allProducts" => $ProductRequest, "allProductTypes"=>$ProductTypeRequest, "thisType"=>$productTypeName]);
     }
 
+    public function listByFind()
+    {
+        $findQuery = htmlspecialchars($_GET['findQuery']);
+        $ProductRequest = Product::getByFind($findQuery);
+        $ProductTypeRequest = ProductType::getAllTypes();
+        return view('list.list', ["allProducts" => $ProductRequest, "allProductTypes"=>$ProductTypeRequest, "thisType"=>"Find"]);
+    }
+
 }
