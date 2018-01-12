@@ -20,8 +20,16 @@ class BasketController extends Controller
     	$models = Basket::getAllById($userId);
         $TemplatesRequest = Template::getAllTemplates($userId);
         $QueryRequest = BookingQuery::getAllUserQueries($userId);
-        return view('basket.list', ["userProducts" => $models, "allTemplates"=>$TemplatesRequest, 
-                                    "thisTemplate"=>"Your Basket", "allQueries" => $QueryRequest]);
+        $summaryCostOfProducts = Basket::getSumCost($userId);
+        return view('basket.list', 
+                [
+                    "userProducts"  => $models, 
+                    "allTemplates"  => $TemplatesRequest, 
+                    "thisTemplate"  => "Your Basket",
+                    "thisTemplateId"  => 0,
+                    "allQueries"    => $QueryRequest,
+                    "sumCost"       => $summaryCostOfProducts[0]->total
+                ]);
     }
 
     public function listByTemplate($templateName)
@@ -32,8 +40,16 @@ class BasketController extends Controller
         $ProductRequest = Product::getByTemplate($templateId);
         $TemplatesRequest = Template::getAllTemplates($userId);
         $QueryRequest = BookingQuery::getAllUserQueries($userId);
-        return view('basket.list', ["userProducts" => $ProductRequest, "allTemplates"=>$TemplatesRequest, 
-                                    "thisTemplate"=>$templateName, "allQueries" => $QueryRequest]);
+        $summaryCostOfProducts = Template::getSumCost($userId, $templateId);
+        return view('basket.list', 
+            [
+                "userProducts"  => $ProductRequest, 
+                "allTemplates"  => $TemplatesRequest, 
+                "thisTemplate"  => $templateName, 
+                "thisTemplateId"  => $templateId,
+                "allQueries"    => $QueryRequest,
+                "sumCost"       => $summaryCostOfProducts[0]->total
+            ]);
     }
     
     public function addOne(){
@@ -59,6 +75,8 @@ class BasketController extends Controller
     public function buyBasket(){
         $userId = \Auth::id();
         $templateName = $_GET['data'];
+        var_dump($templateName);
+        die();
         //basketQuery
         return BookingQuery::addToQuery($userId, $templateName);
     }

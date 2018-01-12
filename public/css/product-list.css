@@ -45,12 +45,15 @@ hr{
 .basket-block{
 
 }
+.inline{
+  display: inline-block;
+}
 .right{
-  position: absolute; /* Абсолютное позиционирование */
+  position: static; /* Абсолютное позиционирование */
   right: 20px;
 }
 .bottom{
-  position: absolute; /* Абсолютное позиционирование */
+  position: static; /* Абсолютное позиционирование */
   bottom: 20px;
 }
 .btn {

@@ -40,19 +40,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- function for output product cost -->
-    @php 
-        function output_with_accuracy($arg, $precision)
-        {
-            $exp = 1;
-            for ($i = 1; $i <= $precision; $i++) {
-                $exp *= 10; 
-            }
-            $result = round ($arg * $exp, 0 ,PHP_ROUND_HALF_UP);
-            $mod = $result % $exp;
-            echo round ($result / $exp, 0 ,PHP_ROUND_HALF_DOWN) . ".". $mod;
-        }
-    @endphp
   
     
 <div class="basic-zone">
@@ -115,7 +102,6 @@
     <div class="product-zone">
         @php 
             echo '<h1> ' . $thisTemplate . '</h1>' ;
-        	$sumCost = 0.00;
             foreach ($userProducts as $product){
         @endphp
     
@@ -129,17 +115,15 @@
                                 <p>
                                     @php 
                                         if ($product->sale == 1){
-                                            output_with_accuracy($product->sale_price * $product->count, 2);
-                                            $sumCost += $product->sale_price * $product->count;
+                                            echo number_format($product->sale_price * $product->count, 2, '.', '');
                                         }
                                         else{
-                                            output_with_accuracy($product->price * $product->count, 2);
-                                            $sumCost += $product->price * $product->count;
-                                        }
+                                            echo number_format($product->price * $product->count, 2, '.', '');
+                                        }  
 
                                         echo " for<br>";
 
-                                        output_with_accuracy($product->weight * $product->count, 1);
+                                        echo number_format($product->weight * $product->count, 2, '.', '');
                                         if ($product->weight_type == 1)
                                             echo " l.";
                                         else
@@ -162,7 +146,6 @@
                                         {
                                             echo "End of sale: " . $product->sale_expiration_date;
                                         }
-                                        
 
                                     @endphp
                                 </p>
@@ -194,22 +177,25 @@
             	echo '<a href="/list" ><p style="text-align: center;">Back to shopping</p></a>';
             	echo '<br></div>';
         	}
-        	else{
+        	else{ 
         @endphp
 		    <hr>
 		    <div class="info-card">
 		    	<div class="right">
-		    		<h2>Summary: @php output_with_accuracy($sumCost, 2); @endphp grn. </h2>
+		    		<h2>Summary: @php echo number_format($sumCost , 2, '.', ''); @endphp usd. </h2>
+
 		    	</div>
 		    	<button class="btn cyan right bottom" title="Buy Basket" onclick ="BuyBasket('{{$thisTemplate}}')">
 	            	<i class="material-icons">shopping_cart</i>
 	            	Buy this Basket
 	            </button>
 		    </div>
-	    @php
+	    @php 
             }
         @endphp
+
         <hr>
+        
         <div class="info-card">
 	        <div class="right bottom">
 	        	<a onclick="showForm()">
@@ -225,7 +211,27 @@
 	            </button>
 	        </div>
 	    </div>
+        
         <hr>
+         @php
+            $sumCost= $sumCost * 100;
+        @endphp
+        
+        <div class="info-card">
+            <form action="/basket-buy" method="POST">
+                {{csrf_field()}}
+                <input name="TemplateId" value="{{$thisTemplateId}}"  hidden="true"></input>
+              <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="{{ config('services.stripe.key') }}"
+                data-amount="{{$sumCost}}"
+                data-name="{{$thisTemplate}}"
+                data-description="Widget"
+                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                data-locale="auto">
+              </script>
+            </form>
+        </div>
    </div>
 </div>
 @endsection

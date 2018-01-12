@@ -42,4 +42,11 @@ class Template extends Model
 	public static function getIdByName($userId, $templateName){
 		return \DB::select('SELECT t.id FROM templates t WHERE (t.name = ?) ;', [$templateName]);
 	}
+
+	public static function getSumCost($userId, $templateId)
+    {
+    	return \DB::select('SELECT sum(p.price*ti.count) as total FROM products p, template_infos ti
+    	 WHERE (p.id = ti.product_id) AND (ti.template_id = ?) AND (ti.count > ?) AND (ti.user_id = ?) ;', [$templateId, 0, $userId]);
+    }
+
 }

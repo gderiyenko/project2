@@ -11,6 +11,12 @@ class Basket extends Model
     	return \DB::select('SELECT p.*, pt.name as type_name, bi.count FROM products p, basket_infos bi,product_types pt
     	 WHERE (p.type_id = pt.id) AND (p.id = bi.product_id) AND (bi.status = ?) AND (bi.count > ?) AND (bi.user_id = ?) ;', [1, 0, $userId]);
     }
+    
+    public static function getSumCost($userId)
+    {
+    	return \DB::select('SELECT sum(p.price*bi.count) as total FROM products p, basket_infos bi
+    	 WHERE (p.id = bi.product_id) AND (bi.status = ?) AND (bi.count > ?) AND (bi.user_id = ?) ;', [1, 0, $userId]);
+    }
 
     public function Status(){
 	    return $this->belongsTo(BasketStatus::class);

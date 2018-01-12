@@ -12,21 +12,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- function for output product cost -->
-    @php 
-        function output_with_accuracy($arg, $precision)
-        {
-            $exp = 1;
-            for ($i = 1; $i <= $precision; $i++) {
-                $exp *= 10; 
-            }
-            $result = round ($arg * $exp, 0 ,PHP_ROUND_HALF_UP);
-            $mod = $result % $exp;
-            echo round ($result / $exp, 0 ,PHP_ROUND_HALF_DOWN) . ".". $mod;
-        }
-    @endphp
-  
-    
 
     <!-- left panel -->
     <div class="fixed-panel">
@@ -85,13 +70,13 @@
                                 <p>
                                     @php 
                                         if ($product->sale == 1)
-                                            output_with_accuracy($product->sale_price, 2);
+                                            echo number_format($product->sale_price, 2, '.', '');
                                         else
-                                            output_with_accuracy($product->price, 2);
+                                            echo number_format($product->price, 2, '.', '');
 
                                         echo " for<br>";
 
-                                        output_with_accuracy($product->weight, 1);
+                                        echo number_format($product->weight, 2, '.', '');
                                         if ($product->weight_type == 1)
                                             echo " l.";
                                         else
