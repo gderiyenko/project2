@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50637
 File Encoding         : 65001
 
-Date: 2018-01-09 15:48:54
+Date: 2018-01-15 09:19:29
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -33,7 +33,7 @@ CREATE TABLE `baskets` (
 -- ----------------------------
 -- Records of baskets
 -- ----------------------------
-INSERT INTO `baskets` VALUES ('1', '1', '0', '2017-12-05 10:49:40', null, '2017-08-11 12:18:46', '1');
+INSERT INTO `baskets` VALUES ('1', '1', '0', '2018-01-12 17:52:13', '2018-01-12 15:52:13', '2017-08-11 12:18:46', '3');
 
 -- ----------------------------
 -- Table structure for baskets_statuses
@@ -71,7 +71,7 @@ CREATE TABLE `basket_infos` (
   `count` float DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of basket_infos
@@ -80,26 +80,26 @@ INSERT INTO `basket_infos` VALUES ('56', '1', '2', '2017-12-01 06:18:54', null, 
 INSERT INTO `basket_infos` VALUES ('57', '1', '1', '2017-12-01 06:18:56', null, null, '11', '2');
 INSERT INTO `basket_infos` VALUES ('58', '1', '3', '2017-12-01 06:19:00', null, null, '2', '2');
 INSERT INTO `basket_infos` VALUES ('59', '1', '1', '2017-12-01 06:21:25', null, null, '9', '2');
-INSERT INTO `basket_infos` VALUES ('60', '1', '5', '2017-12-01 06:21:26', null, null, '7', '2');
-INSERT INTO `basket_infos` VALUES ('61', '1', '5', '2017-12-01 06:21:45', null, null, '6', '2');
+INSERT INTO `basket_infos` VALUES ('60', '1', '5', '2017-12-01 06:21:26', null, null, '8', '2');
+INSERT INTO `basket_infos` VALUES ('61', '1', '5', '2017-12-01 06:21:45', null, null, '7', '2');
 INSERT INTO `basket_infos` VALUES ('62', '1', '8', '2017-12-01 06:21:46', null, null, '1', '2');
 INSERT INTO `basket_infos` VALUES ('63', '1', '2', '2017-12-01 06:21:48', null, null, '6', '2');
 INSERT INTO `basket_infos` VALUES ('64', '1', '6', '2017-12-01 06:21:50', null, null, '1', '2');
 INSERT INTO `basket_infos` VALUES ('65', '1', '4', '2017-12-01 06:21:52', null, null, '4', '2');
 INSERT INTO `basket_infos` VALUES ('66', '1', '3', '2017-12-01 11:24:46', null, null, '2', '2');
-INSERT INTO `basket_infos` VALUES ('67', '1', '5', '2017-12-01 11:24:47', null, null, '6', '2');
+INSERT INTO `basket_infos` VALUES ('67', '1', '5', '2017-12-01 11:24:47', null, null, '7', '2');
 INSERT INTO `basket_infos` VALUES ('68', '1', '6', '2017-12-01 11:24:52', null, null, '2', '2');
 INSERT INTO `basket_infos` VALUES ('69', '1', '3', '2017-12-04 07:26:33', null, null, '2', '2');
-INSERT INTO `basket_infos` VALUES ('70', '1', '5', '2017-12-04 07:26:35', null, null, '6', '2');
+INSERT INTO `basket_infos` VALUES ('70', '1', '5', '2017-12-04 07:26:35', null, null, '7', '2');
 INSERT INTO `basket_infos` VALUES ('71', '1', '2', '2017-12-04 07:26:38', null, null, '6', '2');
 INSERT INTO `basket_infos` VALUES ('72', '1', '1', '2017-12-04 18:59:42', null, null, '6', '2');
 INSERT INTO `basket_infos` VALUES ('73', '1', '2', '2017-12-04 18:59:43', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('74', '1', '5', '2017-12-04 19:12:00', null, null, '6', '2');
+INSERT INTO `basket_infos` VALUES ('74', '1', '5', '2017-12-04 19:12:00', null, null, '7', '2');
 INSERT INTO `basket_infos` VALUES ('75', '1', '3', '2017-12-04 19:12:01', null, null, '2', '2');
 INSERT INTO `basket_infos` VALUES ('76', '1', '2', '2017-12-04 19:12:04', null, null, '4', '2');
 INSERT INTO `basket_infos` VALUES ('77', '1', '1', '2017-12-04 19:37:10', null, null, '6', '2');
 INSERT INTO `basket_infos` VALUES ('78', '1', '2', '2017-12-04 19:47:07', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('79', '1', '5', '2017-12-04 19:47:08', null, null, '6', '2');
+INSERT INTO `basket_infos` VALUES ('79', '1', '5', '2017-12-04 19:47:08', null, null, '7', '2');
 INSERT INTO `basket_infos` VALUES ('80', '1', '8', '2017-12-04 19:47:09', null, null, '1', '2');
 INSERT INTO `basket_infos` VALUES ('81', '1', '4', '2017-12-04 19:47:11', null, null, '4', '2');
 INSERT INTO `basket_infos` VALUES ('82', '1', '1', '2017-12-05 05:33:05', null, null, '5', '2');
@@ -116,26 +116,29 @@ INSERT INTO `basket_infos` VALUES ('92', '1', '3', '2017-12-08 02:51:35', null, 
 INSERT INTO `basket_infos` VALUES ('93', '1', '8', '2017-12-08 02:51:38', null, null, '1', '2');
 INSERT INTO `basket_infos` VALUES ('94', '1', '4', '2017-12-08 02:51:41', null, null, '3', '2');
 INSERT INTO `basket_infos` VALUES ('95', '1', '1', '2017-12-08 02:53:07', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('96', '1', '5', '2017-12-08 02:53:08', null, null, '6', '2');
+INSERT INTO `basket_infos` VALUES ('96', '1', '5', '2017-12-08 02:53:08', null, null, '7', '2');
 INSERT INTO `basket_infos` VALUES ('97', '1', '2', '2017-12-08 02:53:09', null, null, '4', '2');
 INSERT INTO `basket_infos` VALUES ('98', '1', '1', '2017-12-08 14:17:42', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('99', '1', '5', '2017-12-08 14:17:45', null, null, '6', '2');
+INSERT INTO `basket_infos` VALUES ('99', '1', '5', '2017-12-08 14:17:45', null, null, '7', '2');
 INSERT INTO `basket_infos` VALUES ('100', '1', '8', '2017-12-08 14:17:46', null, null, '1', '2');
 INSERT INTO `basket_infos` VALUES ('101', '1', '1', '2017-12-08 16:15:18', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('102', '1', '5', '2017-12-08 16:15:20', null, null, '5', '2');
+INSERT INTO `basket_infos` VALUES ('102', '1', '5', '2017-12-08 16:15:20', null, null, '6', '2');
 INSERT INTO `basket_infos` VALUES ('103', '1', '4', '2017-12-08 16:15:21', null, null, '3', '2');
 INSERT INTO `basket_infos` VALUES ('104', '1', '1', '2017-12-08 20:58:06', null, null, '4', '2');
 INSERT INTO `basket_infos` VALUES ('105', '1', '2', '2017-12-08 20:58:07', null, null, '2', '2');
-INSERT INTO `basket_infos` VALUES ('106', '1', '5', '2017-12-08 20:58:08', null, null, '4', '2');
+INSERT INTO `basket_infos` VALUES ('106', '1', '5', '2017-12-08 20:58:08', null, null, '5', '2');
 INSERT INTO `basket_infos` VALUES ('107', '1', '8', '2017-12-08 20:58:09', null, null, '1', '2');
 INSERT INTO `basket_infos` VALUES ('108', '5', '3', '2017-12-09 07:42:35', null, null, '1', '1');
 INSERT INTO `basket_infos` VALUES ('109', '5', '5', '2017-12-09 07:42:36', null, null, '1', '1');
 INSERT INTO `basket_infos` VALUES ('110', '1', '2', '2017-12-09 07:45:37', null, null, '2', '2');
-INSERT INTO `basket_infos` VALUES ('111', '1', '5', '2017-12-09 07:45:39', null, null, '2', '2');
+INSERT INTO `basket_infos` VALUES ('111', '1', '5', '2017-12-09 07:45:39', null, null, '3', '2');
 INSERT INTO `basket_infos` VALUES ('112', '1', '4', '2017-12-09 07:45:51', null, null, '2', '2');
 INSERT INTO `basket_infos` VALUES ('113', '1', '1', '2018-01-08 09:09:50', null, null, '0', '2');
 INSERT INTO `basket_infos` VALUES ('114', '1', '2', '2018-01-08 09:09:52', null, null, '2', '2');
-INSERT INTO `basket_infos` VALUES ('115', '1', '5', '2018-01-08 09:09:54', null, null, '1', '2');
+INSERT INTO `basket_infos` VALUES ('115', '1', '5', '2018-01-08 09:09:54', null, null, '2', '2');
+INSERT INTO `basket_infos` VALUES ('116', '1', '1', '2018-01-11 09:46:20', null, null, '0', '1');
+INSERT INTO `basket_infos` VALUES ('117', '1', '5', '2018-01-11 09:46:22', null, null, '2', '3');
+INSERT INTO `basket_infos` VALUES ('118', '1', '10', '2018-01-11 09:46:23', null, null, '1', '3');
 
 -- ----------------------------
 -- Table structure for booking_query
@@ -151,23 +154,11 @@ CREATE TABLE `booking_query` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of booking_query
 -- ----------------------------
-INSERT INTO `booking_query` VALUES ('50', '5', '3', '1', '0ufvcVLRUaAEv', '2017-12-09 10:42:41', null, null);
-INSERT INTO `booking_query` VALUES ('51', '5', '5', '1', '0ufvcVLRUaAEv', '2017-12-09 10:42:41', null, null);
-INSERT INTO `booking_query` VALUES ('53', '1', '3', '1', 'sSx3IAsTVFM0n', '2017-12-09 10:43:21', null, null);
-INSERT INTO `booking_query` VALUES ('54', '1', '1', '1', 'sSx3IAsTVFM0n', '2017-12-09 10:43:21', null, null);
-INSERT INTO `booking_query` VALUES ('55', '1', '5', '1', 'sSx3IAsTVFM0n', '2017-12-09 10:43:21', null, null);
-INSERT INTO `booking_query` VALUES ('56', '1', '2', '3', 'sSx3IAsTVFM0n', '2017-12-09 10:43:21', null, null);
-INSERT INTO `booking_query` VALUES ('60', '1', '2', '1', 'ZgWxsX8tv9k8Z', '2017-12-09 10:47:49', null, null);
-INSERT INTO `booking_query` VALUES ('61', '1', '4', '2', 'ZgWxsX8tv9k8Z', '2017-12-09 10:47:49', null, null);
-INSERT INTO `booking_query` VALUES ('62', '1', '3', '1', 'XS9zYX0mZtPrM', '2018-01-09 16:36:35', null, null);
-INSERT INTO `booking_query` VALUES ('63', '1', '1', '1', 'XS9zYX0mZtPrM', '2018-01-09 16:36:35', null, null);
-INSERT INTO `booking_query` VALUES ('64', '1', '5', '1', 'XS9zYX0mZtPrM', '2018-01-09 16:36:35', null, null);
-INSERT INTO `booking_query` VALUES ('65', '1', '2', '3', 'XS9zYX0mZtPrM', '2018-01-09 16:36:35', null, null);
 
 -- ----------------------------
 -- Table structure for categories
@@ -233,7 +224,7 @@ CREATE TABLE `data_rows` (
   PRIMARY KEY (`id`),
   KEY `data_rows_data_type_id_foreign` (`data_type_id`),
   CONSTRAINT `data_rows_data_type_id_foreign` FOREIGN KEY (`data_type_id`) REFERENCES `data_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=148 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=163 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of data_rows
@@ -340,6 +331,21 @@ INSERT INTO `data_rows` VALUES ('144', '36', 'booking_code', 'checkbox', 'Bookin
 INSERT INTO `data_rows` VALUES ('145', '36', 'created_at', 'timestamp', 'Created At', '0', '1', '1', '1', '0', '1', '', '6');
 INSERT INTO `data_rows` VALUES ('146', '36', 'updated_at', 'timestamp', 'Updated At', '0', '0', '0', '0', '0', '0', '', '7');
 INSERT INTO `data_rows` VALUES ('147', '36', 'deleted_at', 'timestamp', 'Deleted At', '0', '1', '1', '1', '1', '1', '', '8');
+INSERT INTO `data_rows` VALUES ('148', '37', 'id', 'checkbox', 'Id', '1', '0', '0', '0', '0', '0', '', '1');
+INSERT INTO `data_rows` VALUES ('149', '37', 'name', 'checkbox', 'Name', '1', '1', '1', '1', '1', '1', '', '2');
+INSERT INTO `data_rows` VALUES ('150', '37', 'price', 'checkbox', 'Price', '1', '1', '1', '1', '1', '1', '', '3');
+INSERT INTO `data_rows` VALUES ('151', '37', 'weight_type', 'checkbox', 'Weight Type', '1', '1', '1', '1', '1', '1', '', '4');
+INSERT INTO `data_rows` VALUES ('152', '37', 'weight', 'checkbox', 'Weight', '1', '1', '1', '1', '1', '1', '', '5');
+INSERT INTO `data_rows` VALUES ('153', '37', 'shop_id', 'checkbox', 'Shop Id', '1', '1', '1', '1', '1', '1', '', '6');
+INSERT INTO `data_rows` VALUES ('154', '37', 'sale', 'checkbox', 'Sale', '0', '1', '1', '1', '1', '1', '', '7');
+INSERT INTO `data_rows` VALUES ('155', '37', 'sale_expiration_date', 'checkbox', 'Sale Expiration Date', '0', '1', '1', '1', '1', '1', '', '8');
+INSERT INTO `data_rows` VALUES ('156', '37', 'created_at', 'timestamp', 'Created At', '0', '1', '1', '1', '0', '1', '', '9');
+INSERT INTO `data_rows` VALUES ('157', '37', 'updated_at', 'timestamp', 'Updated At', '0', '0', '0', '0', '0', '0', '', '10');
+INSERT INTO `data_rows` VALUES ('158', '37', 'img_path', 'checkbox', 'Img Path', '1', '1', '1', '1', '1', '1', '', '11');
+INSERT INTO `data_rows` VALUES ('159', '37', 'sale_price', 'checkbox', 'Sale Price', '0', '1', '1', '1', '1', '1', '', '12');
+INSERT INTO `data_rows` VALUES ('160', '37', 'type_id', 'checkbox', 'Type Id', '1', '1', '1', '1', '1', '1', '', '13');
+INSERT INTO `data_rows` VALUES ('161', '37', 'sale_start_date', 'timestamp', 'Sale Start Date', '0', '1', '1', '1', '1', '1', '', '14');
+INSERT INTO `data_rows` VALUES ('162', '37', 'description', 'checkbox', 'Description', '0', '1', '1', '1', '1', '1', '', '15');
 
 -- ----------------------------
 -- Table structure for data_types
@@ -362,7 +368,7 @@ CREATE TABLE `data_types` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `data_types_name_unique` (`name`),
   UNIQUE KEY `data_types_slug_unique` (`slug`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of data_types
@@ -382,6 +388,7 @@ INSERT INTO `data_types` VALUES ('30', 'communications', 'communications', 'Comm
 INSERT INTO `data_types` VALUES ('31', 'basket_infos', 'basket-infos', 'Basket Info', 'Basket Infos', '', 'App\\BasketInfo', '', '', '1', '0', '2017-11-27 17:59:41', '2017-11-27 17:59:41');
 INSERT INTO `data_types` VALUES ('34', 'template', 'template', 'Template', 'Templates', '', 'App\\Template', '', '', '1', '0', '2017-12-01 11:50:42', '2017-12-01 11:50:42');
 INSERT INTO `data_types` VALUES ('36', 'booking_query', 'booking-query', 'Booking Query', 'Booking Queries', '', 'App\\BookingQuery', '', '', '1', '0', '2017-12-08 20:19:25', '2017-12-08 20:19:25');
+INSERT INTO `data_types` VALUES ('37', 'products', 'products', 'Product', 'Products', '', 'App\\Product', '', '', '1', '0', '2018-01-12 15:31:54', '2018-01-12 15:31:54');
 
 -- ----------------------------
 -- Table structure for menus
@@ -452,7 +459,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of migrations
@@ -477,6 +484,7 @@ INSERT INTO `migrations` VALUES ('17', '2017_01_15_000000_create_permission_grou
 INSERT INTO `migrations` VALUES ('18', '2017_01_15_000000_make_table_name_nullable_in_permissions_table', '1');
 INSERT INTO `migrations` VALUES ('19', '2017_03_06_000000_add_controller_to_data_types_table', '1');
 INSERT INTO `migrations` VALUES ('20', '2017_04_21_000000_add_order_to_data_rows_table', '1');
+INSERT INTO `migrations` VALUES ('21', '2018_01_10_160533_create_subscriptions_add_users', '2');
 
 -- ----------------------------
 -- Table structure for packages
@@ -551,7 +559,7 @@ CREATE TABLE `permissions` (
   `permission_group_id` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `permissions_key_index` (`key`)
-) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of permissions
@@ -635,6 +643,11 @@ INSERT INTO `permissions` VALUES ('111', 'read_booking_query', 'booking_query', 
 INSERT INTO `permissions` VALUES ('112', 'edit_booking_query', 'booking_query', '2017-12-08 20:19:25', '2017-12-08 20:19:25', null);
 INSERT INTO `permissions` VALUES ('113', 'add_booking_query', 'booking_query', '2017-12-08 20:19:25', '2017-12-08 20:19:25', null);
 INSERT INTO `permissions` VALUES ('114', 'delete_booking_query', 'booking_query', '2017-12-08 20:19:25', '2017-12-08 20:19:25', null);
+INSERT INTO `permissions` VALUES ('115', 'browse_products', 'products', '2018-01-12 15:31:54', '2018-01-12 15:31:54', null);
+INSERT INTO `permissions` VALUES ('116', 'read_products', 'products', '2018-01-12 15:31:54', '2018-01-12 15:31:54', null);
+INSERT INTO `permissions` VALUES ('117', 'edit_products', 'products', '2018-01-12 15:31:54', '2018-01-12 15:31:54', null);
+INSERT INTO `permissions` VALUES ('118', 'add_products', 'products', '2018-01-12 15:31:54', '2018-01-12 15:31:54', null);
+INSERT INTO `permissions` VALUES ('119', 'delete_products', 'products', '2018-01-12 15:31:54', '2018-01-12 15:31:54', null);
 
 -- ----------------------------
 -- Table structure for permission_groups
@@ -823,7 +836,7 @@ INSERT INTO `products` VALUES ('2', 'Fanta', '15.8', '1', '1', '2', '1', '2017-0
 INSERT INTO `products` VALUES ('3', 'Holland cheese', '33.33', '3', '100', '2', '1', '2015-03-11', '2017-11-27 17:24:35', '2017-11-27 17:24:35', 'products/November2017/hFFCYjzdbKacUovceU8y.png', '21.11', '2', null, null);
 INSERT INTO `products` VALUES ('4', 'Cherry', '30.9', '2', '1', '2', '0', '2017-07-25', '2017-11-27 17:26:34', '2017-11-27 17:26:34', 'products/November2017/sPHnKuwPjvVpL5FJirpL.jpg', '25.8', '6', null, null);
 INSERT INTO `products` VALUES ('5', 'Cheese', '41.11', '3', '100', '1', '0', '2017-08-21', '2017-11-27 17:28:05', '2017-11-27 17:28:05', 'products/November2017/dzfULtEgAkfmnLKMka9A.jpg', '38.99', '2', null, null);
-INSERT INTO `products` VALUES ('6', 'H20la', '10.05', '1', '1', '1', '1', '2017-12-29', '2017-11-27 17:29:13', '2017-11-27 17:29:13', 'products/November2017/mjnXxZ8D4yS3vuNhpqL2.jpg', '9.8', '1', null, null);
+INSERT INTO `products` VALUES ('6', 'H2Ola', '10.05', '1', '1', '1', '1', '2017-12-29', '2017-11-27 17:29:13', '2017-11-27 17:29:13', 'products/November2017/mjnXxZ8D4yS3vuNhpqL2.jpg', '9.8', '1', null, null);
 INSERT INTO `products` VALUES ('8', 'Milk 3,6%', '32', '1', '3', '3', '0', '2121-02-21', '2017-11-27 17:30:41', '2017-11-27 17:30:41', 'products/November2017/NkY5QgiJuRmJOvtNCKam.jpg', '21.21', '2', null, null);
 INSERT INTO `products` VALUES ('10', 'potato', '5.5', '2', '1', '1', '1', '2017-12-21', '2017-12-09 07:51:06', '2017-12-09 07:51:06', 'products/December2017/cFkbLitexCwyPIyFSLmm.jpg', '4.4', '6', null, null);
 
@@ -922,6 +935,49 @@ INSERT INTO `shops` VALUES ('2', 'ÐœÐ°Ñ€ÐºÐµÑ‚Ñ€Ð¾Ð¿Ñ‚',
 INSERT INTO `shops` VALUES ('3', 'ÐžÐ¿Ñ‚Ð¾Ð²Ð¸Ñ‡Ð¾Ðº', 'ÑƒÐ». Ð´.', '2017-08-11 13:04:11', '2017-08-11 13:04:11', null);
 
 -- ----------------------------
+-- Table structure for statuses
+-- ----------------------------
+DROP TABLE IF EXISTS `statuses`;
+CREATE TABLE `statuses` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` text COLLATE utf8_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of statuses
+-- ----------------------------
+INSERT INTO `statuses` VALUES ('1', 'active', '2018-01-12 17:34:41', null, null);
+INSERT INTO `statuses` VALUES ('2', 'non-active', '2018-01-12 17:34:53', null, null);
+INSERT INTO `statuses` VALUES ('3', 'processing', '2018-01-12 17:35:11', null, null);
+INSERT INTO `statuses` VALUES ('4', 'done', '2018-01-12 17:35:23', null, null);
+
+-- ----------------------------
+-- Table structure for subscriptions
+-- ----------------------------
+DROP TABLE IF EXISTS `subscriptions`;
+CREATE TABLE `subscriptions` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `stripe_id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `stripe_plan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `trial_ends_at` timestamp NULL DEFAULT NULL,
+  `ends_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of subscriptions
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for templates
 -- ----------------------------
 DROP TABLE IF EXISTS `templates`;
@@ -959,7 +1015,7 @@ CREATE TABLE `template_infos` (
   `template_id` int(11) NOT NULL,
   `count` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of template_infos
@@ -1039,6 +1095,10 @@ CREATE TABLE `users` (
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `stripe_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `card_brand` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `card_last_four` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `trial_ends_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -1046,11 +1106,11 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', '1', 'Admin', 'admin@admin.com', 'users/default.png', '$2y$10$S4iitEfHxIm6dUX0GQ4oA.U13xBnOI4fY8kPd5xq4cWsaOYM4mKQe', 'aeSLl16bhmEejAQsSlt4vkDMsMiLy2GloNXmyGFOkCpF8Vx4cNLPW9F7gMmD', '2017-08-07 08:03:41', '2018-01-09 12:36:27');
-INSERT INTO `users` VALUES ('2', '2', 'Gleb', 'gleb.deriyenko@gmail.com', 'users/default.png', '$2y$10$Ui1YnZnZl0q9UMHIwE35Z.gxF0CfqOwO0EolYOQz04mwYIWRd9sUu', 's9qOhpe44UZSZQ8mP5DAfNsdYykgdsbtBmWCWml9hyNun6ktxeREOCbrEmjV', '2017-08-07 14:24:14', '2017-08-07 14:46:18');
-INSERT INTO `users` VALUES ('3', '3', 'Marketopt', 'marketopt@admin.com', 'users/default.png', '$2y$10$BUd6MidBLGeh7NxO9t2jiOUU.JsJ2kd3dRuj8ivG/kiYSDV4Qe3qW', null, '2017-08-14 09:19:47', '2017-08-14 09:25:14');
-INSERT INTO `users` VALUES ('4', '2', 'bogdan', 'dydka@mail.com', 'users/default.png', '$2y$10$r9lpfhcxMSV.KIbzY86g8eDtIs4idhyahypBSXhVXFbMS6FNn2ClW', null, '2017-11-28 10:16:29', '2017-11-28 10:16:29');
-INSERT INTO `users` VALUES ('5', '2', 'Karina', 'karina@gmail.com', 'users/default.png', '$2y$10$A0njqOymkYPv.MSIDBUYpuslrlBHTFAPFP9npEp0jOANUUnwkuyM.', null, '2017-12-09 07:42:08', '2017-12-09 07:42:08');
+INSERT INTO `users` VALUES ('1', '1', 'Admin', 'admin@admin.com', 'users/default.png', '$2y$10$S4iitEfHxIm6dUX0GQ4oA.U13xBnOI4fY8kPd5xq4cWsaOYM4mKQe', 'aeSLl16bhmEejAQsSlt4vkDMsMiLy2GloNXmyGFOkCpF8Vx4cNLPW9F7gMmD', '2017-08-07 08:03:41', '2018-01-09 12:36:27', null, null, null, null);
+INSERT INTO `users` VALUES ('2', '2', 'Gleb', 'gleb.deriyenko@gmail.com', 'users/default.png', '$2y$10$Ui1YnZnZl0q9UMHIwE35Z.gxF0CfqOwO0EolYOQz04mwYIWRd9sUu', 's9qOhpe44UZSZQ8mP5DAfNsdYykgdsbtBmWCWml9hyNun6ktxeREOCbrEmjV', '2017-08-07 14:24:14', '2017-08-07 14:46:18', null, null, null, null);
+INSERT INTO `users` VALUES ('3', '3', 'Marketopt', 'marketopt@admin.com', 'users/default.png', '$2y$10$BUd6MidBLGeh7NxO9t2jiOUU.JsJ2kd3dRuj8ivG/kiYSDV4Qe3qW', null, '2017-08-14 09:19:47', '2017-08-14 09:25:14', null, null, null, null);
+INSERT INTO `users` VALUES ('4', '2', 'bogdan', 'dydka@mail.com', 'users/default.png', '$2y$10$r9lpfhcxMSV.KIbzY86g8eDtIs4idhyahypBSXhVXFbMS6FNn2ClW', null, '2017-11-28 10:16:29', '2017-11-28 10:16:29', null, null, null, null);
+INSERT INTO `users` VALUES ('5', '2', 'Karina', 'karina@gmail.com', 'users/default.png', '$2y$10$A0njqOymkYPv.MSIDBUYpuslrlBHTFAPFP9npEp0jOANUUnwkuyM.', null, '2017-12-09 07:42:08', '2017-12-09 07:42:08', null, null, null, null);
 
 -- ----------------------------
 -- Table structure for weight_types

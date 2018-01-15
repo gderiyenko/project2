@@ -49,4 +49,13 @@ class Template extends Model
     	 WHERE (p.id = ti.product_id) AND (ti.template_id = ?) AND (ti.count > ?) AND (ti.user_id = ?) ;', [$templateId, 0, $userId]);
     }
 
+    public static function processing($userId, $TemplateId)
+	{
+		$date = new \DateTime();
+		\DB::select('UPDATE template_infos ti SET ti.status = 3 WHERE (ti.user_id = ?) AND (ti.status = ?) AND (ti.count > 0);', 
+			[$userId, 1]);
+		\DB::select('UPDATE templates t SET t.status = 3, t.paid_at = ? WHERE (t.user_id = ?) AND (t.status = ?);', 
+			[$date->format('Y-m-d H:i:s'),$userId, 1]);
+	}
+
 }
