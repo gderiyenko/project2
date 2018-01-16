@@ -4,16 +4,25 @@ namespace App\Http\Controllers;
 
 use Stripe\{Stripe, Charge, Customer};
 use Stripe\Error\Card;
-use App\{Basket,Template};
+use App\{Basket};
+
+use Mailgun\Mailgun;
+use Mail;
+
 
 class PurchasesController extends Controller
 {
-    public function succeededPayment($userId, $TemplateId)
+    public static function succeededPayment($userId, $email)
     {
-        if ($TemplateId == 0)
-            Basket::processing($userId);
-        else
-            Template::processing($userId, $TemplateId);
+        Basket::processing($userId);
+        $date = new \DateTime();
+        $date->modify("+30 minutes"); 
+        $date->modify("+2 hours");
+         Mail::send('emails.order', ['take_time'=>$date->format('Y-m-d H:i:s')],  function ($message) use ($email) {
+            $message->from('us@example.com', 'Laravel');
+            $message->to($email);
+        });
+
         return view('Payment.ThankYou');
     }
     public function paymentError()
@@ -25,15 +34,12 @@ class PurchasesController extends Controller
         $userId = \Auth::id();
         $token  = $_POST['stripeToken'];
         $email  = $_POST['stripeEmail'];
-        $TemplateId  = $_POST['TemplateId'];
-
-        if (request('TemplateId') == 0)
-            $price = Basket::getSumCost($userId);
-        else
-            $price = Template::getSumCost($userId, $TemplateId);
+        $price = Basket::getSumCost($userId);
         $price = round($price[0]->total * 100);
-
         $key = Stripe::setApiKey(config('services.stripe.secret'));
+        return PurchasesController::succeededPayment($userId,$email);
+        if ($price < 100)
+            return PurchasesController::paymentError();
         $customer = Customer::create([
             'email' => $email,
             'source' => $token
@@ -43,14 +49,11 @@ class PurchasesController extends Controller
             'amount' => $price,
             'currency' => 'usd'
         ]);
-     
+    
         if ($charge["status"] == "succeeded")
-            return PurchasesController::succeededPayment($userId, $TemplateId);
+            return PurchasesController::succeededPayment($userId, $email);
         else
             return PurchasesController::paymentError();
     }
-
-    
-
     
 }

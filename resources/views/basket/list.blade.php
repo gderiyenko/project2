@@ -17,21 +17,7 @@
         $.get('/basket-delete', {'data': TemplateName}, function(response){ console.log(response); });
         location.reload();
     };
-    function templateBasket() {
-    	var x = $('.mytext').val();
-	    if (x == "") {
-	        alert("Name must be filled out");
-	        return false;
-	    }
-        $.get('/save-template', {'data': x}, function(response){ console.log(response); });
-        closeForm();
-    };
-    function closeForm() {
-    	$("#form-window").css('display', 'none');
-    };
-    function showForm() {
-    	$("#form-window").css('display', 'block');
-    };
+
     function BuyBasket(TemplateName) {
         $.get('/basket-buy', {'data': TemplateName}, function(response){ console.log(response); });
         location.reload();
@@ -47,31 +33,8 @@
     <div class="fixed-panel">
         <ul>
             <li class="case"><a href=" {{ url('/list') }} ">Shop</a></li>
-            @php
-                if ($thisTemplate == "Your Basket"){
-            @endphp
+            
                 <li class="case card cyan"><a href="{{url('/basket')}}">Your Basket</a></li>
-            @php
-                }else{
-            @endphp
-                <li class="case"><a href="{{url('/basket')}}">Your Basket</a></li>
-            @php
-                }
-            @endphp
-            <hr>
-            Templates
-            @php
-                foreach($allTemplates as $template)
-                if ($template->name == $thisTemplate){
-            @endphp
-                <li class="case card cyan"><a href="\basket\{{$template->name}}"> {{$template->name}} </a></li>
-            @php
-                }else{
-            @endphp
-                <li class="case"><a href="\basket\{{$template->name}}"> {{$template->name}} </a></li>
-            @php
-            }
-            @endphp
             <hr>
             Orders 
             @php 
@@ -86,22 +49,9 @@
             @endphp
         </ul>
     </div>
-    <!-- Template form -->
-    <div id="form-window" class="card">
-    	<button onclick="closeForm()">
-    		<i class="material-icons right">close</i>
-    	</button>
-    	<br>
-    	<form name="myForm"  method="get">
-    	<p>Template name:</p>
-		<input type="text" class="mytext">
-		<input type="submit"  onclick="templateBasket()" value="Submit">
-		</form>
-    </div>
     <!-- product zone -->
     <div class="product-zone">
         @php 
-            echo '<h1> ' . $thisTemplate . '</h1>' ;
             foreach ($userProducts as $product){
         @endphp
     
@@ -185,7 +135,7 @@
 		    		<h2>Summary: @php echo number_format($sumCost , 2, '.', ''); @endphp usd. </h2>
 
 		    	</div>
-		    	<button class="btn cyan right bottom" title="Buy Basket" onclick ="BuyBasket('{{$thisTemplate}}')">
+		    	<button class="btn cyan right bottom" title="Buy Basket" onclick ="BuyBasket()">
 	            	<i class="material-icons">shopping_cart</i>
 	            	Buy this Basket
 	            </button>
@@ -205,7 +155,7 @@
 		            </button>
 	        	</a>
 
-	        	<button class="btn black" title="Delete this Basket" onclick ="DeleteBasket('{{$thisTemplate}}')">
+	        	<button class="btn black" title="Delete this Basket" onclick ="DeleteBasket()">
 	            	<i class="material-icons">delete</i>
 	            	Delete All
 	            </button>
@@ -220,12 +170,11 @@
         <div class="info-card">
             <form action="/basket-buy" method="POST">
                 {{csrf_field()}}
-                <input name="TemplateId" value="{{$thisTemplateId}}"  hidden="true"></input>
               <script
                 src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="{{ config('services.stripe.key') }}"
                 data-amount="{{$sumCost}}"
-                data-name="{{$thisTemplate}}"
+                data-name="Your Basket"
                 data-description="Widget"
                 data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                 data-locale="auto">
