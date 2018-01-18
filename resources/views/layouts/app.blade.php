@@ -60,6 +60,9 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+                                        <a href="{{ url('/home') }}">
+                                            Google Authenticator
+                                        </a> 
                                         <a href="{{ url('/basket') }}">
                                             Basket
                                         </a>

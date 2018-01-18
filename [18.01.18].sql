@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50637
 File Encoding         : 65001
 
-Date: 2018-01-15 09:19:29
+Date: 2018-01-18 14:45:13
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -71,74 +71,146 @@ CREATE TABLE `basket_infos` (
   `count` float DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=191 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of basket_infos
 -- ----------------------------
-INSERT INTO `basket_infos` VALUES ('56', '1', '2', '2017-12-01 06:18:54', null, null, '7', '2');
-INSERT INTO `basket_infos` VALUES ('57', '1', '1', '2017-12-01 06:18:56', null, null, '11', '2');
-INSERT INTO `basket_infos` VALUES ('58', '1', '3', '2017-12-01 06:19:00', null, null, '2', '2');
-INSERT INTO `basket_infos` VALUES ('59', '1', '1', '2017-12-01 06:21:25', null, null, '9', '2');
-INSERT INTO `basket_infos` VALUES ('60', '1', '5', '2017-12-01 06:21:26', null, null, '8', '2');
-INSERT INTO `basket_infos` VALUES ('61', '1', '5', '2017-12-01 06:21:45', null, null, '7', '2');
+INSERT INTO `basket_infos` VALUES ('56', '1', '2', '2017-12-01 06:18:54', null, null, '9', '2');
+INSERT INTO `basket_infos` VALUES ('57', '1', '1', '2017-12-01 06:18:56', null, null, '57', '2');
+INSERT INTO `basket_infos` VALUES ('58', '1', '3', '2017-12-01 06:19:00', null, null, '3', '2');
+INSERT INTO `basket_infos` VALUES ('59', '1', '1', '2017-12-01 06:21:25', null, null, '55', '2');
+INSERT INTO `basket_infos` VALUES ('60', '1', '5', '2017-12-01 06:21:26', null, null, '13', '2');
+INSERT INTO `basket_infos` VALUES ('61', '1', '5', '2017-12-01 06:21:45', null, null, '12', '2');
 INSERT INTO `basket_infos` VALUES ('62', '1', '8', '2017-12-01 06:21:46', null, null, '1', '2');
-INSERT INTO `basket_infos` VALUES ('63', '1', '2', '2017-12-01 06:21:48', null, null, '6', '2');
-INSERT INTO `basket_infos` VALUES ('64', '1', '6', '2017-12-01 06:21:50', null, null, '1', '2');
+INSERT INTO `basket_infos` VALUES ('63', '1', '2', '2017-12-01 06:21:48', null, null, '8', '2');
+INSERT INTO `basket_infos` VALUES ('64', '1', '6', '2017-12-01 06:21:50', null, null, '3', '2');
 INSERT INTO `basket_infos` VALUES ('65', '1', '4', '2017-12-01 06:21:52', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('66', '1', '3', '2017-12-01 11:24:46', null, null, '2', '2');
-INSERT INTO `basket_infos` VALUES ('67', '1', '5', '2017-12-01 11:24:47', null, null, '7', '2');
-INSERT INTO `basket_infos` VALUES ('68', '1', '6', '2017-12-01 11:24:52', null, null, '2', '2');
-INSERT INTO `basket_infos` VALUES ('69', '1', '3', '2017-12-04 07:26:33', null, null, '2', '2');
-INSERT INTO `basket_infos` VALUES ('70', '1', '5', '2017-12-04 07:26:35', null, null, '7', '2');
-INSERT INTO `basket_infos` VALUES ('71', '1', '2', '2017-12-04 07:26:38', null, null, '6', '2');
-INSERT INTO `basket_infos` VALUES ('72', '1', '1', '2017-12-04 18:59:42', null, null, '6', '2');
-INSERT INTO `basket_infos` VALUES ('73', '1', '2', '2017-12-04 18:59:43', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('74', '1', '5', '2017-12-04 19:12:00', null, null, '7', '2');
-INSERT INTO `basket_infos` VALUES ('75', '1', '3', '2017-12-04 19:12:01', null, null, '2', '2');
-INSERT INTO `basket_infos` VALUES ('76', '1', '2', '2017-12-04 19:12:04', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('77', '1', '1', '2017-12-04 19:37:10', null, null, '6', '2');
-INSERT INTO `basket_infos` VALUES ('78', '1', '2', '2017-12-04 19:47:07', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('79', '1', '5', '2017-12-04 19:47:08', null, null, '7', '2');
+INSERT INTO `basket_infos` VALUES ('66', '1', '3', '2017-12-01 11:24:46', null, null, '3', '2');
+INSERT INTO `basket_infos` VALUES ('67', '1', '5', '2017-12-01 11:24:47', null, null, '12', '2');
+INSERT INTO `basket_infos` VALUES ('68', '1', '6', '2017-12-01 11:24:52', null, null, '4', '2');
+INSERT INTO `basket_infos` VALUES ('69', '1', '3', '2017-12-04 07:26:33', null, null, '3', '2');
+INSERT INTO `basket_infos` VALUES ('70', '1', '5', '2017-12-04 07:26:35', null, null, '12', '2');
+INSERT INTO `basket_infos` VALUES ('71', '1', '2', '2017-12-04 07:26:38', null, null, '8', '2');
+INSERT INTO `basket_infos` VALUES ('72', '1', '1', '2017-12-04 18:59:42', null, null, '52', '2');
+INSERT INTO `basket_infos` VALUES ('73', '1', '2', '2017-12-04 18:59:43', null, null, '6', '2');
+INSERT INTO `basket_infos` VALUES ('74', '1', '5', '2017-12-04 19:12:00', null, null, '12', '2');
+INSERT INTO `basket_infos` VALUES ('75', '1', '3', '2017-12-04 19:12:01', null, null, '3', '2');
+INSERT INTO `basket_infos` VALUES ('76', '1', '2', '2017-12-04 19:12:04', null, null, '6', '2');
+INSERT INTO `basket_infos` VALUES ('77', '1', '1', '2017-12-04 19:37:10', null, null, '52', '2');
+INSERT INTO `basket_infos` VALUES ('78', '1', '2', '2017-12-04 19:47:07', null, null, '6', '2');
+INSERT INTO `basket_infos` VALUES ('79', '1', '5', '2017-12-04 19:47:08', null, null, '12', '2');
 INSERT INTO `basket_infos` VALUES ('80', '1', '8', '2017-12-04 19:47:09', null, null, '1', '2');
 INSERT INTO `basket_infos` VALUES ('81', '1', '4', '2017-12-04 19:47:11', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('82', '1', '1', '2017-12-05 05:33:05', null, null, '5', '2');
-INSERT INTO `basket_infos` VALUES ('83', '1', '3', '2017-12-05 05:33:07', null, null, '1', '2');
+INSERT INTO `basket_infos` VALUES ('82', '1', '1', '2017-12-05 05:33:05', null, null, '51', '2');
+INSERT INTO `basket_infos` VALUES ('83', '1', '3', '2017-12-05 05:33:07', null, null, '2', '2');
 INSERT INTO `basket_infos` VALUES ('84', '1', '4', '2017-12-05 05:33:08', null, null, '3', '2');
-INSERT INTO `basket_infos` VALUES ('85', '1', '1', '2017-12-05 12:04:25', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('86', '1', '3', '2017-12-05 12:04:27', null, null, '1', '2');
-INSERT INTO `basket_infos` VALUES ('87', '1', '2', '2017-12-05 13:38:55', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('88', '1', '6', '2017-12-05 13:38:56', null, null, '1', '2');
-INSERT INTO `basket_infos` VALUES ('89', '1', '2', '2017-12-06 01:39:08', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('90', '1', '1', '2017-12-06 01:39:10', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('91', '1', '6', '2017-12-06 01:39:11', null, null, '1', '2');
-INSERT INTO `basket_infos` VALUES ('92', '1', '3', '2017-12-08 02:51:35', null, null, '1', '2');
+INSERT INTO `basket_infos` VALUES ('85', '1', '1', '2017-12-05 12:04:25', null, null, '50', '2');
+INSERT INTO `basket_infos` VALUES ('86', '1', '3', '2017-12-05 12:04:27', null, null, '2', '2');
+INSERT INTO `basket_infos` VALUES ('87', '1', '2', '2017-12-05 13:38:55', null, null, '6', '2');
+INSERT INTO `basket_infos` VALUES ('88', '1', '6', '2017-12-05 13:38:56', null, null, '3', '2');
+INSERT INTO `basket_infos` VALUES ('89', '1', '2', '2017-12-06 01:39:08', null, null, '6', '2');
+INSERT INTO `basket_infos` VALUES ('90', '1', '1', '2017-12-06 01:39:10', null, null, '50', '2');
+INSERT INTO `basket_infos` VALUES ('91', '1', '6', '2017-12-06 01:39:11', null, null, '3', '2');
+INSERT INTO `basket_infos` VALUES ('92', '1', '3', '2017-12-08 02:51:35', null, null, '2', '2');
 INSERT INTO `basket_infos` VALUES ('93', '1', '8', '2017-12-08 02:51:38', null, null, '1', '2');
 INSERT INTO `basket_infos` VALUES ('94', '1', '4', '2017-12-08 02:51:41', null, null, '3', '2');
-INSERT INTO `basket_infos` VALUES ('95', '1', '1', '2017-12-08 02:53:07', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('96', '1', '5', '2017-12-08 02:53:08', null, null, '7', '2');
-INSERT INTO `basket_infos` VALUES ('97', '1', '2', '2017-12-08 02:53:09', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('98', '1', '1', '2017-12-08 14:17:42', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('99', '1', '5', '2017-12-08 14:17:45', null, null, '7', '2');
+INSERT INTO `basket_infos` VALUES ('95', '1', '1', '2017-12-08 02:53:07', null, null, '50', '2');
+INSERT INTO `basket_infos` VALUES ('96', '1', '5', '2017-12-08 02:53:08', null, null, '12', '2');
+INSERT INTO `basket_infos` VALUES ('97', '1', '2', '2017-12-08 02:53:09', null, null, '6', '2');
+INSERT INTO `basket_infos` VALUES ('98', '1', '1', '2017-12-08 14:17:42', null, null, '50', '2');
+INSERT INTO `basket_infos` VALUES ('99', '1', '5', '2017-12-08 14:17:45', null, null, '12', '2');
 INSERT INTO `basket_infos` VALUES ('100', '1', '8', '2017-12-08 14:17:46', null, null, '1', '2');
-INSERT INTO `basket_infos` VALUES ('101', '1', '1', '2017-12-08 16:15:18', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('102', '1', '5', '2017-12-08 16:15:20', null, null, '6', '2');
+INSERT INTO `basket_infos` VALUES ('101', '1', '1', '2017-12-08 16:15:18', null, null, '50', '2');
+INSERT INTO `basket_infos` VALUES ('102', '1', '5', '2017-12-08 16:15:20', null, null, '11', '2');
 INSERT INTO `basket_infos` VALUES ('103', '1', '4', '2017-12-08 16:15:21', null, null, '3', '2');
-INSERT INTO `basket_infos` VALUES ('104', '1', '1', '2017-12-08 20:58:06', null, null, '4', '2');
-INSERT INTO `basket_infos` VALUES ('105', '1', '2', '2017-12-08 20:58:07', null, null, '2', '2');
-INSERT INTO `basket_infos` VALUES ('106', '1', '5', '2017-12-08 20:58:08', null, null, '5', '2');
+INSERT INTO `basket_infos` VALUES ('104', '1', '1', '2017-12-08 20:58:06', null, null, '50', '2');
+INSERT INTO `basket_infos` VALUES ('105', '1', '2', '2017-12-08 20:58:07', null, null, '4', '2');
+INSERT INTO `basket_infos` VALUES ('106', '1', '5', '2017-12-08 20:58:08', null, null, '10', '2');
 INSERT INTO `basket_infos` VALUES ('107', '1', '8', '2017-12-08 20:58:09', null, null, '1', '2');
 INSERT INTO `basket_infos` VALUES ('108', '5', '3', '2017-12-09 07:42:35', null, null, '1', '1');
 INSERT INTO `basket_infos` VALUES ('109', '5', '5', '2017-12-09 07:42:36', null, null, '1', '1');
-INSERT INTO `basket_infos` VALUES ('110', '1', '2', '2017-12-09 07:45:37', null, null, '2', '2');
-INSERT INTO `basket_infos` VALUES ('111', '1', '5', '2017-12-09 07:45:39', null, null, '3', '2');
+INSERT INTO `basket_infos` VALUES ('110', '1', '2', '2017-12-09 07:45:37', null, null, '4', '2');
+INSERT INTO `basket_infos` VALUES ('111', '1', '5', '2017-12-09 07:45:39', null, null, '8', '2');
 INSERT INTO `basket_infos` VALUES ('112', '1', '4', '2017-12-09 07:45:51', null, null, '2', '2');
-INSERT INTO `basket_infos` VALUES ('113', '1', '1', '2018-01-08 09:09:50', null, null, '0', '2');
-INSERT INTO `basket_infos` VALUES ('114', '1', '2', '2018-01-08 09:09:52', null, null, '2', '2');
-INSERT INTO `basket_infos` VALUES ('115', '1', '5', '2018-01-08 09:09:54', null, null, '2', '2');
-INSERT INTO `basket_infos` VALUES ('116', '1', '1', '2018-01-11 09:46:20', null, null, '0', '1');
-INSERT INTO `basket_infos` VALUES ('117', '1', '5', '2018-01-11 09:46:22', null, null, '2', '3');
-INSERT INTO `basket_infos` VALUES ('118', '1', '10', '2018-01-11 09:46:23', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('113', '1', '1', '2018-01-08 09:09:50', null, null, '46', '2');
+INSERT INTO `basket_infos` VALUES ('114', '1', '2', '2018-01-08 09:09:52', null, null, '4', '2');
+INSERT INTO `basket_infos` VALUES ('115', '1', '5', '2018-01-08 09:09:54', null, null, '7', '2');
+INSERT INTO `basket_infos` VALUES ('116', '1', '1', '2018-01-11 09:46:20', null, null, '46', '3');
+INSERT INTO `basket_infos` VALUES ('117', '1', '5', '2018-01-11 09:46:22', null, null, '7', '3');
+INSERT INTO `basket_infos` VALUES ('118', '1', '10', '2018-01-11 09:46:23', null, null, '4', '3');
+INSERT INTO `basket_infos` VALUES ('119', '1', '2', '2018-01-15 07:47:04', null, null, '3', '3');
+INSERT INTO `basket_infos` VALUES ('120', '1', '1', '2018-01-15 08:31:04', null, null, '44', '2');
+INSERT INTO `basket_infos` VALUES ('121', '1', '3', '2018-01-15 08:32:37', null, null, '1', '2');
+INSERT INTO `basket_infos` VALUES ('122', '1', '10', '2018-01-15 08:32:39', null, null, '3', '2');
+INSERT INTO `basket_infos` VALUES ('123', '1', '6', '2018-01-15 08:32:42', null, null, '3', '2');
+INSERT INTO `basket_infos` VALUES ('124', '1', '1', '2018-01-15 08:33:10', null, null, '43', '2');
+INSERT INTO `basket_infos` VALUES ('125', '1', '5', '2018-01-15 08:33:11', null, null, '6', '2');
+INSERT INTO `basket_infos` VALUES ('126', '1', '4', '2018-01-15 08:33:13', null, null, '1', '2');
+INSERT INTO `basket_infos` VALUES ('127', '1', '1', '2018-01-15 11:42:10', null, null, '43', '3');
+INSERT INTO `basket_infos` VALUES ('128', '1', '3', '2018-01-15 11:42:11', null, null, '2', '3');
+INSERT INTO `basket_infos` VALUES ('129', '1', '5', '2018-01-15 11:42:12', null, null, '6', '3');
+INSERT INTO `basket_infos` VALUES ('130', '1', '1', '2018-01-15 11:50:45', null, null, '43', '3');
+INSERT INTO `basket_infos` VALUES ('131', '1', '5', '2018-01-15 11:50:47', null, null, '6', '3');
+INSERT INTO `basket_infos` VALUES ('132', '1', '2', '2018-01-15 11:56:35', null, null, '2', '3');
+INSERT INTO `basket_infos` VALUES ('133', '1', '5', '2018-01-15 11:56:36', null, null, '6', '3');
+INSERT INTO `basket_infos` VALUES ('134', '1', '10', '2018-01-15 11:56:37', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('135', '1', '1', '2018-01-15 12:08:26', null, null, '43', '3');
+INSERT INTO `basket_infos` VALUES ('136', '1', '5', '2018-01-15 12:08:27', null, null, '6', '3');
+INSERT INTO `basket_infos` VALUES ('137', '1', '10', '2018-01-15 12:08:28', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('138', '1', '1', '2018-01-15 12:13:58', null, null, '43', '3');
+INSERT INTO `basket_infos` VALUES ('139', '1', '5', '2018-01-15 12:13:59', null, null, '6', '3');
+INSERT INTO `basket_infos` VALUES ('140', '1', '10', '2018-01-15 12:14:00', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('141', '1', '3', '2018-01-15 12:15:39', null, null, '2', '3');
+INSERT INTO `basket_infos` VALUES ('142', '1', '1', '2018-01-15 12:22:38', null, null, '43', '3');
+INSERT INTO `basket_infos` VALUES ('143', '1', '5', '2018-01-15 12:22:39', null, null, '6', '3');
+INSERT INTO `basket_infos` VALUES ('144', '1', '1', '2018-01-15 12:30:10', null, null, '43', '3');
+INSERT INTO `basket_infos` VALUES ('145', '1', '3', '2018-01-15 12:38:41', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('146', '1', '5', '2018-01-15 12:38:42', null, null, '5', '3');
+INSERT INTO `basket_infos` VALUES ('147', '1', '1', '2018-01-15 14:00:28', null, null, '41', '3');
+INSERT INTO `basket_infos` VALUES ('148', '1', '3', '2018-01-15 14:19:25', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('149', '1', '5', '2018-01-15 14:19:25', null, null, '3', '3');
+INSERT INTO `basket_infos` VALUES ('150', '1', '1', '2018-01-15 14:27:18', null, null, '37', '3');
+INSERT INTO `basket_infos` VALUES ('151', '1', '1', '2018-01-15 14:37:54', null, null, '34', '3');
+INSERT INTO `basket_infos` VALUES ('152', '1', '2', '2018-01-15 14:37:55', null, null, '2', '3');
+INSERT INTO `basket_infos` VALUES ('153', '1', '1', '2018-01-15 14:42:35', null, null, '34', '3');
+INSERT INTO `basket_infos` VALUES ('154', '1', '1', '2018-01-15 15:49:09', null, null, '32', '3');
+INSERT INTO `basket_infos` VALUES ('155', '1', '1', '2018-01-16 12:31:45', null, null, '31', '3');
+INSERT INTO `basket_infos` VALUES ('156', '1', '2', '2018-01-16 12:31:45', null, null, '2', '3');
+INSERT INTO `basket_infos` VALUES ('157', '1', '1', '2018-01-16 12:36:28', null, null, '31', '3');
+INSERT INTO `basket_infos` VALUES ('158', '1', '1', '2018-01-16 12:39:57', null, null, '29', '3');
+INSERT INTO `basket_infos` VALUES ('159', '1', '1', '2018-01-16 12:43:58', null, null, '26', '3');
+INSERT INTO `basket_infos` VALUES ('160', '1', '1', '2018-01-16 12:47:38', null, null, '23', '3');
+INSERT INTO `basket_infos` VALUES ('161', '1', '1', '2018-01-16 12:50:46', null, null, '19', '3');
+INSERT INTO `basket_infos` VALUES ('162', '1', '1', '2018-01-16 12:57:09', null, null, '17', '3');
+INSERT INTO `basket_infos` VALUES ('163', '1', '3', '2018-01-16 13:25:34', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('164', '1', '5', '2018-01-16 13:25:34', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('165', '1', '1', '2018-01-16 13:32:52', null, null, '16', '3');
+INSERT INTO `basket_infos` VALUES ('166', '1', '3', '2018-01-16 13:34:36', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('167', '1', '5', '2018-01-16 13:34:37', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('168', '1', '2', '2018-01-16 13:34:37', null, null, '2', '3');
+INSERT INTO `basket_infos` VALUES ('169', '1', '6', '2018-01-16 13:34:38', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('170', '1', '2', '2018-01-16 13:46:30', null, null, '2', '3');
+INSERT INTO `basket_infos` VALUES ('171', '1', '1', '2018-01-16 13:46:32', null, null, '15', '3');
+INSERT INTO `basket_infos` VALUES ('172', '1', '1', '2018-01-16 14:06:37', null, null, '15', '3');
+INSERT INTO `basket_infos` VALUES ('173', '1', '2', '2018-01-16 14:12:33', null, null, '2', '3');
+INSERT INTO `basket_infos` VALUES ('174', '1', '1', '2018-01-16 14:18:26', null, null, '12', '3');
+INSERT INTO `basket_infos` VALUES ('175', '1', '1', '2018-01-16 14:24:55', null, null, '9', '3');
+INSERT INTO `basket_infos` VALUES ('176', '1', '1', '2018-01-16 14:26:22', null, null, '6', '3');
+INSERT INTO `basket_infos` VALUES ('177', '1', '1', '2018-01-16 14:51:59', null, null, '6', '3');
+INSERT INTO `basket_infos` VALUES ('178', '1', '2', '2018-01-16 14:52:00', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('179', '1', '1', '2018-01-16 15:06:04', null, null, '6', '3');
+INSERT INTO `basket_infos` VALUES ('180', '1', '1', '2018-01-16 15:16:01', null, null, '5', '3');
+INSERT INTO `basket_infos` VALUES ('181', '1', '2', '2018-01-16 15:16:02', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('182', '7', '1', '2018-01-17 13:50:02', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('183', '7', '2', '2018-01-17 13:50:03', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('184', '1', '1', '2018-01-17 14:39:50', null, null, '5', '3');
+INSERT INTO `basket_infos` VALUES ('185', '1', '1', '2018-01-17 14:50:05', null, null, '2', '3');
+INSERT INTO `basket_infos` VALUES ('186', '1', '5', '2018-01-17 14:50:06', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('187', '1', '4', '2018-01-17 14:50:08', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('188', '1', '1', '2018-01-17 14:53:58', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('189', '1', '2', '2018-01-17 14:53:59', null, null, '1', '3');
+INSERT INTO `basket_infos` VALUES ('190', '1', '6', '2018-01-17 14:54:00', null, null, '1', '3');
 
 -- ----------------------------
 -- Table structure for booking_query
@@ -459,7 +531,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of migrations
@@ -485,6 +557,7 @@ INSERT INTO `migrations` VALUES ('18', '2017_01_15_000000_make_table_name_nullab
 INSERT INTO `migrations` VALUES ('19', '2017_03_06_000000_add_controller_to_data_types_table', '1');
 INSERT INTO `migrations` VALUES ('20', '2017_04_21_000000_add_order_to_data_rows_table', '1');
 INSERT INTO `migrations` VALUES ('21', '2018_01_10_160533_create_subscriptions_add_users', '2');
+INSERT INTO `migrations` VALUES ('22', '2018_01_17_120742_add_google2fa_secret_to_users', '3');
 
 -- ----------------------------
 -- Table structure for packages
@@ -978,63 +1051,6 @@ CREATE TABLE `subscriptions` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for templates
--- ----------------------------
-DROP TABLE IF EXISTS `templates`;
-CREATE TABLE `templates` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `name` text COLLATE utf8_unicode_ci NOT NULL,
-  `status` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- ----------------------------
--- Records of templates
--- ----------------------------
-INSERT INTO `templates` VALUES ('54', '1', 'Monday', '2', '2017-12-08 08:30:39', null, '2018-01-09 13:36:38');
-INSERT INTO `templates` VALUES ('55', '1', 'Sunday', '2', '2017-12-08 15:41:10', null, '2018-01-09 13:17:05');
-INSERT INTO `templates` VALUES ('56', '1', 'test', '1', '2017-12-09 07:47:35', null, null);
-INSERT INTO `templates` VALUES ('57', '1', 'kek', '2', '2018-01-08 09:10:53', null, '2018-01-09 13:36:43');
-INSERT INTO `templates` VALUES ('58', '1', 'faa', '2', '2018-01-08 10:53:30', null, '2018-01-09 13:36:46');
-
--- ----------------------------
--- Table structure for template_infos
--- ----------------------------
-DROP TABLE IF EXISTS `template_infos`;
-CREATE TABLE `template_infos` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  `template_id` int(11) NOT NULL,
-  `count` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- ----------------------------
--- Records of template_infos
--- ----------------------------
-INSERT INTO `template_infos` VALUES ('14', '1', '3', '2017-12-08 02:51:35', null, null, '54', '1');
-INSERT INTO `template_infos` VALUES ('15', '1', '1', '2017-12-08 02:53:07', null, null, '54', '1');
-INSERT INTO `template_infos` VALUES ('16', '1', '5', '2017-12-08 02:53:08', null, null, '54', '1');
-INSERT INTO `template_infos` VALUES ('17', '1', '2', '2017-12-08 02:53:09', null, null, '54', '3');
-INSERT INTO `template_infos` VALUES ('21', '1', '1', '2017-12-08 14:17:42', null, null, '55', '1');
-INSERT INTO `template_infos` VALUES ('22', '1', '5', '2017-12-08 14:17:45', null, null, '55', '1');
-INSERT INTO `template_infos` VALUES ('23', '1', '8', '2017-12-08 14:17:46', null, null, '55', '1');
-INSERT INTO `template_infos` VALUES ('24', '1', '2', '2017-12-09 07:45:37', null, null, '56', '1');
-INSERT INTO `template_infos` VALUES ('25', '1', '4', '2017-12-09 07:45:51', null, null, '56', '2');
-INSERT INTO `template_infos` VALUES ('26', '1', '1', '2018-01-08 09:09:50', null, null, '57', '0');
-INSERT INTO `template_infos` VALUES ('27', '1', '5', '2018-01-08 09:09:54', null, null, '57', '1');
-INSERT INTO `template_infos` VALUES ('29', '1', '1', '2018-01-08 09:09:50', null, null, '58', '0');
-INSERT INTO `template_infos` VALUES ('30', '1', '5', '2018-01-08 09:09:54', null, null, '58', '1');
-
--- ----------------------------
 -- Table structure for translations
 -- ----------------------------
 DROP TABLE IF EXISTS `translations`;
@@ -1099,18 +1115,21 @@ CREATE TABLE `users` (
   `card_brand` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `card_last_four` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `trial_ends_at` timestamp NULL DEFAULT NULL,
+  `google2fa_secret` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', '1', 'Admin', 'admin@admin.com', 'users/default.png', '$2y$10$S4iitEfHxIm6dUX0GQ4oA.U13xBnOI4fY8kPd5xq4cWsaOYM4mKQe', 'aeSLl16bhmEejAQsSlt4vkDMsMiLy2GloNXmyGFOkCpF8Vx4cNLPW9F7gMmD', '2017-08-07 08:03:41', '2018-01-09 12:36:27', null, null, null, null);
-INSERT INTO `users` VALUES ('2', '2', 'Gleb', 'gleb.deriyenko@gmail.com', 'users/default.png', '$2y$10$Ui1YnZnZl0q9UMHIwE35Z.gxF0CfqOwO0EolYOQz04mwYIWRd9sUu', 's9qOhpe44UZSZQ8mP5DAfNsdYykgdsbtBmWCWml9hyNun6ktxeREOCbrEmjV', '2017-08-07 14:24:14', '2017-08-07 14:46:18', null, null, null, null);
-INSERT INTO `users` VALUES ('3', '3', 'Marketopt', 'marketopt@admin.com', 'users/default.png', '$2y$10$BUd6MidBLGeh7NxO9t2jiOUU.JsJ2kd3dRuj8ivG/kiYSDV4Qe3qW', null, '2017-08-14 09:19:47', '2017-08-14 09:25:14', null, null, null, null);
-INSERT INTO `users` VALUES ('4', '2', 'bogdan', 'dydka@mail.com', 'users/default.png', '$2y$10$r9lpfhcxMSV.KIbzY86g8eDtIs4idhyahypBSXhVXFbMS6FNn2ClW', null, '2017-11-28 10:16:29', '2017-11-28 10:16:29', null, null, null, null);
-INSERT INTO `users` VALUES ('5', '2', 'Karina', 'karina@gmail.com', 'users/default.png', '$2y$10$A0njqOymkYPv.MSIDBUYpuslrlBHTFAPFP9npEp0jOANUUnwkuyM.', null, '2017-12-09 07:42:08', '2017-12-09 07:42:08', null, null, null, null);
+INSERT INTO `users` VALUES ('1', '1', 'Admin', 'admin@admin.com', 'users/default.png', '$2y$10$S4iitEfHxIm6dUX0GQ4oA.U13xBnOI4fY8kPd5xq4cWsaOYM4mKQe', 'mKiYIqI36gSDhWeRLiq8x1MaIeW1KU2OjNMSpfVspTYhwq350YgAAJWiWGIs', '2017-08-07 08:03:41', '2018-01-17 12:07:13', null, null, null, null, null);
+INSERT INTO `users` VALUES ('3', '3', 'Marketopt', 'marketopt@admin.com', 'users/default.png', '$2y$10$BUd6MidBLGeh7NxO9t2jiOUU.JsJ2kd3dRuj8ivG/kiYSDV4Qe3qW', null, '2017-08-14 09:19:47', '2017-08-14 09:25:14', null, null, null, null, null);
+INSERT INTO `users` VALUES ('4', '2', 'bogdan', 'dydka@mail.com', 'users/default.png', '$2y$10$r9lpfhcxMSV.KIbzY86g8eDtIs4idhyahypBSXhVXFbMS6FNn2ClW', null, '2017-11-28 10:16:29', '2017-11-28 10:16:29', null, null, null, null, null);
+INSERT INTO `users` VALUES ('5', '2', 'Karina', 'karina@gmail.com', 'users/default.png', '$2y$10$A0njqOymkYPv.MSIDBUYpuslrlBHTFAPFP9npEp0jOANUUnwkuyM.', null, '2017-12-09 07:42:08', '2017-12-09 07:42:08', null, null, null, null, null);
+INSERT INTO `users` VALUES ('6', '2', 'Oleg', 'oleg.fedorenkotoptort@gmail.com', 'users/default.png', '$2y$10$IlXSs4lbtFHOEAtJpXl5gOKpvfNKl3RTbhfnVloYPXr90MvSDpBJK', 'kqQ5Q5zSbnqs3dVJFQGLVdygzpMyDw44dHSzLLPJikviJ9Vxt9OsCuj5ANrI', '2018-01-17 13:20:27', '2018-01-17 13:41:37', null, null, null, null, 'eyJpdiI6Ik95WVZ3SHpHZzhTdEhmZWJJNnNIeHc9PSIsInZhbHVlIjoibnNKazdIVHFKc2cyRnp4cEhuemtabU1SM1lZQ2JJQjNza2d3MzNIYnlKMD0iLCJtYWMiOiJkZGUxOTM1YmIxNzUzNzM4MmVkMjhkNDQwN2ViY2IxMWZlZGI4MTg1NTAyZDliYjU4YjUwZmQwODcxNDhkNDk4In0=');
+INSERT INTO `users` VALUES ('7', '2', 'Gleb Deriyenko', 'gleb.deriyenko@gmail.com', 'users/default.png', '$2y$10$3Ri.DiPJ1MFAZEn89e.PYOb1/u2/kEYuR7rwUh05VjbHXV7fBlP.K', 'm0kXf19Z3nW8yTcMGgDE5Na7125Pwfk2xifGTaLSDtfTARhQqL0SaILTEMBC', '2018-01-17 13:43:10', '2018-01-18 12:38:56', null, null, null, null, 'eyJpdiI6Im9mc1pGdE84YXJsT2xwMjN4VDZ0TVE9PSIsInZhbHVlIjoiXC83VysyU3p6d2NZMmtHWGNvaE9qd3QyeFVPMlg3ZnFvRGZDU1V4SFgzSUk9IiwibWFjIjoiNjgyMjFlZTBhZTc5NmIyMDU3MDYxNTU2Njk5MjczNmZhMzc1ZGVmNzY5N2IxM2Y2MTMyMDE4NzYyYjIxMDhiMiJ9');
+INSERT INTO `users` VALUES ('8', '2', 'fergwe', 'fff@gmail.com', 'users/default.png', '$2y$10$N5GOyanAYSYhFv3GXD59FuqNDUaoV53BOKWx08pckAik6iyRveB4O', 'xSzI8D7NeUoBRK8wgRZdAtc5UyPBHpazOvvU2sW8JmgxVVEPiTk0GGizNtoq', '2018-01-18 09:57:48', '2018-01-18 09:58:34', null, null, null, null, 'eyJpdiI6ImRwNGJjbitKUzZGWkNac01rVXVrRHc9PSIsInZhbHVlIjoid0QwUnpBczIybzVKdzhENWhOOWJQVnNKVXQzblFHcFJ6Z1VZcmQxN3VMRT0iLCJtYWMiOiI0N2I4MTVjYTEzNGQ0OWJjYzM5NjgwMDNjYTMyZjdkODc0N2U3YzFiNGE5YmY3ZGU3ZDViZWZiYmY0OGQ5NmY4In0=');
 
 -- ----------------------------
 -- Table structure for weight_types

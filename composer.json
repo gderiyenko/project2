@@ -6,13 +6,18 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "bacon/bacon-qr-code": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/cashier": "~7.0",
         "laravel/framework": "5.3.*",
         "laravelcollective/html": "^5.3.0",
         "mailgun/mailgun-php": "^2.4",
+        "paragonie/constant_time_encoding": "^2.2",
+        "pragmarx/google2fa": "^2.0",
+        "pragmarx/google2fa-laravel": "^0.1.4",
         "stripe/stripe-php": "^5.8",
-        "tcg/voyager": "^0.11.14"
+        "tcg/voyager": "^0.11.14",
+        "simplesoftwareio/simple-qrcode": "~2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
