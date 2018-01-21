@@ -15,48 +15,24 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
+    use AuthenticatesUsers;
+
     protected $redirectTo = '/home';
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'logout']);
     }
-    use AuthenticatesUsers;
 
-    /**
-     * Send the post-authentication response.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \Illuminate\Contracts\Auth\Authenticatable $user
-     * @return \Illuminate\Http\Response
-     */
-    private function authenticated(Request $request, Authenticatable $user)
+    public function authenticated(Request $request, $user)
     {
-        if ($user->google2fa_secret) {
-            Auth::logout();
-
-            $request->session()->put('2fa:user:id', $user->id);
-
-            return redirect('2fa/validate');
+        if ($user->active == 1) {
+            return redirect()->intended($this->redirectPath());
+        } else {
+            return $this->logout($request);
         }
-
-        return redirect()->intended($this->redirectTo);
     }
 
-    /**
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function getValidateToken()
     {
 
@@ -67,11 +43,6 @@ class LoginController extends Controller
         return redirect('login');
     }
 
-        /**
-     *
-     * @param  App\Http\Requests\ValidateSecretRequest $request
-     * @return \Illuminate\Http\Response
-     */
     public function postValidateToken(ValidateSecretRequest $request)
     {
         //get user id and create cache key

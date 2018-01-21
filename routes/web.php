@@ -64,6 +64,9 @@ Route::post('/basket-buy', 'PurchasesController@store');
  Route::get('/2fa/validate', 'Auth\LoginController@getValidateToken');
  Route::post('/2fa/validate', ['middleware' => 'throttle:5', 'uses' => 'Auth\LoginController@postValidateToken']);
 
+//activation
+ Route::get('/activation', 'Auth\RegisterController@sendActivationMail');
+ Route::get('/activation/{userId?}/{hesh?}', 'Auth\RegisterController@activateAccount');
 
 
 Route::group(['prefix' => 'admin'], function () {
