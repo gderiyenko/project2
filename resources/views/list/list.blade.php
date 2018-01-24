@@ -1,6 +1,6 @@
 
 <script>
-    function myFunction(productId) {
+    function AddOne(productId) {
         return $.get('/basket-add-one', {'data': productId}, function(response){ console.log(response); });
     };
     function findQuery() {

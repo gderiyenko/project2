@@ -28,5 +28,7 @@
     <td>
         <a href="javascript:;" class="btn btn-outline btn-circle btn-sm purple">
             <i class="fa fa-edit"></i> Edit </a>
+        <a href="javascript:;" class="btn btn-circle btn-default btn-sm" onclick ="AddOne({{$product->id}})">
+            <i class="fa fa-plus"></i> Add </a>
     </td>
 </tr>

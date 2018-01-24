@@ -46,11 +46,11 @@
                     <thead>
                         <tr>
                             <th>
-                                <i class="fa fa-briefcase"></i> Product </th>
+                                <i class="fa fa-shopping-cart"></i> Product </th>
                             <th class="hidden-xs">
                                 <i class="fa fa-user"></i> Count </th>
                             <th>
-                                <i class="fa fa-shopping-cart"></i> Total </th>
+                                <i class="fa fa-money"></i> Total </th>
                             <th> </th>
                         </tr>
                     </thead>
