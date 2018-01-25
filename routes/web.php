@@ -15,24 +15,6 @@
     return view('welcome');
 });*/
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
-
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
-
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
-
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
 
 Auth::routes();
 
@@ -69,26 +51,4 @@ Route::post('/basket-buy', 'PurchasesController@store');
  Route::get('/activation/{userId?}/{hesh?}', 'Auth\RegisterController@activateAccount');
 
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
 
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
-
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
-
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
-
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});

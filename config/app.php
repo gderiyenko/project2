@@ -167,7 +167,6 @@ return [
         /*
          * Package Service Providers...
          */
-		TCG\Voyager\VoyagerServiceProvider::class,
         Laravel\Cashier\CashierServiceProvider::class,
         PragmaRX\Google2FALaravel\ServiceProvider::class,
 
